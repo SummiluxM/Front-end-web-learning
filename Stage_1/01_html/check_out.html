@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_css/header.css">
+    <link rel="stylesheet" href="../02_css/footer.css">
+    <link rel="stylesheet" href="../02_css/right_menu.min.css">
+    <link rel="stylesheet" href="../02_css/check_out.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header_base">
+            <img src="../04_resource/img/uesr_center/origin/logo.png">
+            <div class="header_items">
+                <a>登录</a>
+                <a>注册</a>
+                <div class="header_search_box">
+                    <input type="text" placeholder="热门搜索：干花花瓶"><button></button>
+                </div>
+                <a href="" class="user_btn"></a>
+                <a href="" class="QRcode_btn"></a>
+            </div>
+        </div>
+        <div class="header_nav">
+            <ul>
+                <li class="hover_red">
+                    <span>首页</span>
+                </li>
+                <li class=" hover_red" id="show_menu">
+                    <span>所有商品</span>
+                    <ul class="header_menu">
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav1.jpg" alt="">
+                            <p>弄清欧式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav2.jpg" alt="">
+                            <p>浪漫法式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav3.jpg" alt="">
+                            <p>雅致中式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav6.jpg" alt="">
+                            <p>简约现代</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav7.jpg" alt="">
+                            <p>创意装饰</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hover_red"><span>装饰摆件</span></li>
+                <li class="hover_red"><span>布艺软饰</span></li>
+                <li class="hover_red"><span>墙饰壁挂</span></li>
+                <li class="hover_red"><span>蜡艺香薰</span></li>
+                <li class="hover_red"><span>创意家居</span></li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="nav_base">
+            <span>订单确认</span>
+            <div>
+                <img src="../04_resource/img/check_out/point_1.png">
+                <span class="nav_font_color_red">购物车</span>
+                <span class="nav_font_color_red">————————</span>
+                <img src="../04_resource/img/check_out/point_2.png">
+                <span class="nav_font_color_red">订单确认</span>
+                <span>————————</span>
+                <img src="../04_resource/img//check_out/point_3.png">
+                <span>完成订单</span>
+            </div>
+
+        </div>
+    </nav>
+    <main>
+        <div class="main_item_left">
+            <h2>收件信息<a href="">新增信息</a></h2>
+            <div class="mi_location_box">
+
+                <div class="col-5">
+                    <div>
+                        <p>张三1 <span>[默认地址]</span></p>
+                        <p><a href="">删除</a>|<a href="">编辑</a></p>
+                    </div>
+                    <div>
+                        <p>河北省 唐山市 路北区 大学生公寓村</p>
+                        <p>15732570937</p>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <p>张三1 <span>[默认地址]</span></p>
+                        <p><a href="">删除</a>|<a href="">编辑</a></p>
+                    </div>
+                    <div>
+                        <p>河北省 唐山市 路北区 大学生公寓村</p>
+                        <p>15732570937</p>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <p>张三1 <span>[默认地址]</span></p>
+                        <p><a href="">删除</a>|<a href="">编辑</a></p>
+                    </div>
+                    <div>
+                        <p>河北省 唐山市 路北区 大学生公寓村</p>
+                        <p>15732570937</p>
+                    </div>
+                </div>
+
+            </div>
+            <h2>支付方式</h2>
+            <div class="mi_payment">
+                <p>
+                    <img src="../04_resource/img/check_out/alipay.png">
+                    支付宝支付
+                </p>
+                <p>
+                    <img src="../04_resource/img/check_out/wechat.png">
+                    微信支付
+                </p>
+                <p>
+                    <img src="../04_resource/img/check_out/union_pay.png">
+                    银联支付
+                </p>
+                <p>货到付款</p>
+            </div>
+            <h2>选择快递</h2>
+            <div class="mi_payment" id="mi_delever">
+                <p>
+                    顺丰快递
+                </p>
+                <p>
+
+                    圆通快递
+                </p>
+                <p>
+
+                    百世汇通
+                </p>
+                <p>货到付款</p>
+            </div>
+        </div>
+        <div class="main_item_right">
+            <div class="main_item_right_top">
+                <h2>订单内容<a href="">返回购物车</a></h2>
+                <div id="checkout_box_base">
+                    <div class="checkout_box">
+                        <img src="../04_resource/img/check_out/img_1.png">
+                        <div class="checkout_box_item">
+                            <p>创意现代简约干花花瓶摆件</p>
+                            <p>颜色分类：烟灰色玻璃瓶</p>
+                            <p>数量：1</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="">￥69.90</a>
+                    </div>
+                </div>
+                <div id="checkout_box_base">
+                    <div class="checkout_box">
+                        <img src="../04_resource/img/check_out/img_2.png">
+                        <div class="checkout_box_item">
+                            <p>创意现代简约干花花瓶摆件</p>
+                            <p>颜色分类：烟灰色玻璃瓶</p>
+                            <p>数量：1</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="">￥69.90</a>
+                    </div>
+                </div>
+            </div>
+            <p class="mir_bottom">
+                商品金额：
+                <span>￥139.80</span>
+            </p>
+            <p class="mir_bottom">
+                优惠金额：
+                <span>￥0.00</span>
+            </p>
+            <p class="mir_bottom" id="mir_bottom_line">
+                运费：
+                <span>免运费</span>
+            </p>
+            <p class="mir_bottom mirb_big">
+                合计：
+                <span>￥139.80</span>
+            </p>
+            <button type="submit">去支付</button>
+        </div>
+    </main>
+    <div class="right_fixed_meun_icon">
+        <div>
+            <a href="">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_shpping.png" alt="">
+            </a>
+            <div class="rfmi_red_dot">
+                <span>1</span>
+            </div>
+        </div>
+        <div>
+            <a href="">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_phone.png" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_user.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="foot_item">
+        <div>
+            <ul>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_7.png" alt="">
+                    <span>7天无理由退货</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_15.png" alt="">
+                    <span>15天免费换货</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_mail.png" alt="">
+                    <span>满599包邮</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_severce.png" alt="">
+                    <span>手机特色服务</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>蜗牛家居©2019-2021公司版权所有 京ICP备080100-xx号
+        <p>违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+    </footer>
+</body>
+
+</html>

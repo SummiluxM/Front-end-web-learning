@@ -1,0 +1,162 @@
+body {
+    width: 100%;
+    height: 1080px;
+    background-image:url(../04_resource/img/sign_in&registered/images/bg_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    position: relative;
+}
+div {
+    width: 462px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 1129px;
+    top: 283px;
+    background-color: white;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+}
+.sign_in {
+    display: none;
+    height: 350px;
+    text-align: center;
+    img {
+        margin: 24px auto;
+    }
+    hr {
+        border: 1px solid #d6d6d6;
+        border-top: transparent;
+        border-left: transparent;
+        border-right: transparent;
+        margin: 0px;
+    }
+    p {
+        margin: 0px auto;
+        margin-top: 12px;
+        margin-bottom: 10px;
+        width: 256px;
+        height: 30px;
+        border: 1px solid #f7cda4;
+        font-size: 13px;
+        line-height: 30px;
+        background-color: #fdf4e5;
+    }
+    input {
+        display: block;
+        box-sizing: border-box;
+        margin: 0px auto;
+        margin-bottom: 15px;
+        padding-left: 20px;
+        width: 256px;
+        height: 42px;
+        font-size: 14px;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;  
+    }
+    button {
+        width: 256px;
+        height: 40px;
+        border: none;
+        display: block;
+        margin: 0px auto;
+        background-color: darkred;    
+        font-size: 14px;
+        color: white;
+        border-radius: 4px;  
+    }
+    .sign_in_foot {
+        display: block;
+        margin: 0px auto;
+        text-align: right;
+        background-color: unset;
+        border: unset;
+        border-radius: 4px;
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        
+    }
+}
+.registered {
+    height: 515px;
+    text-align: center;
+    img {
+        margin: 24px auto;
+    }
+    hr {
+        border: 1px solid #d6d6d6;
+        border-top: transparent;
+        border-left: transparent;
+        border-right: transparent;
+        margin: 0px;
+    }
+    p {
+        margin: 0px auto;
+        margin-top: 12px;
+        margin-bottom: 10px;
+        width: 256px;
+        height: 30px;
+        font-size: 13px;
+        line-height: 30px;
+    }
+    input {
+        display: block;
+        box-sizing: border-box;
+        margin: 0px auto;
+        margin-bottom: 15px;
+        padding-left: 20px;
+        width: 256px;
+        height: 42px;
+        font-size: 14px;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;  
+    }
+    .vfc_box {
+        height: 42px;
+        text-align: left;
+        .vfc_code_input {
+            display: inline-block;
+            width: 185px;
+            vertical-align: middle;
+            margin: 0px;
+        }
+        img {
+            margin: 0px;
+            vertical-align: middle;
+        }
+    }
+    .registered_foot {
+        height: 40px;
+        text-align: left;
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: black;
+        span {
+            color: darkred;
+        }
+    }
+    button {
+        width: 256px;
+        height: 40px;
+        border: none;
+        display: block;
+        margin: 0px auto;
+        background-color: darkred;    
+        font-size: 14px;
+        color: white;
+        border-radius: 4px;  
+    }
+    .registered_foot_link {
+        text-align: right;
+        margin-top: 0px;
+        a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold; 
+        }
+        
+    }
+}

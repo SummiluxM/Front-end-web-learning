@@ -1,0 +1,14 @@
+@import "./global1";
+nav {
+    height: 42px;
+    line-height: 42px;
+    ul {
+        height: 42px;
+        font-size: 13px;
+        .nav {
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 11px;
+        }
+    }
+}

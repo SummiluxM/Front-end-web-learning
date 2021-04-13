@@ -1,0 +1,287 @@
+@import "./global1";
+
+body {
+    font-size: 0px;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+
+    .nav_base {
+        width: 1200px;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        span:first-child {
+            position: absolute;
+            left: 0px;
+        }
+
+        div {
+            display: inline-block;
+            font-size: 14px;
+
+            img {
+                vertical-align: middle;
+            }
+            span {
+                padding-left: 5px;
+                padding-right: 5px;
+                font-weight: bolder;
+                color: #cfcfcf;                
+            }
+            .nav_font_color_red {
+                color: #c10000;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+            color: black;
+        }
+    }
+}
+
+main {
+    width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .main_item_left {
+        width: 700px;
+
+        h2 {
+            font-size: 16px;
+            margin-top: 15px;
+            font-weight: normal;
+            position: relative;
+            line-height: 50px;
+            border-bottom: 1px solid #dbdbdb;
+
+            a {
+                font-size: 12px;
+                font-weight: normal;
+                color: black;
+                margin-left: 18px;
+                text-decoration: underline;
+                text-align: right;
+                position: absolute;
+                right: 0px;
+            }
+        }
+
+        .mi_location_box {
+            width: 100%;
+            font-size: 12px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            padding-right: 20px;
+
+            .col-5 {
+                width: 330px;
+                height: 150px;
+                box-sizing: border-box;
+                border: 2px solid #dbdbdb;
+                margin-bottom: 40px;
+
+                div:first-child {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 45px;
+                    box-sizing: border-box;
+
+                    p:first-child {
+                        line-height: 45px;
+                        padding-left: 10px;
+
+                        span {
+                            padding-left: 15px;
+                        }
+                    }
+
+                    p:last-child {
+
+                        a {
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            color: black;
+                            text-decoration: underline;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                div:last-child {
+                    height: 101px;
+                    background-color: #f5f5f5;
+                    border-top: 1px solid #dbdbdb;
+                    line-height: 50px;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                }
+            }
+
+            .col-5:first-child {
+                border: 2px solid #c10000;
+            }
+
+            .col-5:last-child {
+                margin-bottom: 0px;
+            }
+
+
+        }
+
+        .mi_payment {
+            display: flex;
+            font-size: 12px;
+            line-height: 42px;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+
+            p {
+                width: 140px;
+                height: 46px;
+                padding-left: 18px;
+                box-sizing: border-box;
+                border: 2px solid #dbdbdb;
+                vertical-align: middle;
+
+                img {
+                    vertical-align: middle;
+                }
+            }
+
+            p:first-child {
+                border: 2px solid #c10000;
+            }
+
+            p:last-child {
+                padding-left: 0px;
+                text-align: center;
+            }
+        }
+
+        #mi_delever {
+            p {
+                text-align: center;
+                padding-left: 0px;
+            }
+
+            margin-bottom: 30px;
+        }
+    }
+
+    .main_item_right {
+        width: 420px;
+        height: 500px;
+        box-sizing: border-box;
+
+        .main_item_right_top {
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #f5f5f5;
+
+            h2 {
+                font-size: 16px;
+                font-weight: normal;
+                position: relative;
+                line-height: 50px;
+                border-bottom: 1px solid #dbdbdb;
+
+                a {
+                    font-size: 12px;
+                    font-weight: normal;
+                    color: black;
+                    margin-left: 18px;
+                    text-decoration: underline;
+                    text-align: right;
+                    position: absolute;
+                    right: 0px;
+                }
+            }
+
+            #checkout_box_base {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 110px;
+                box-sizing: border-box;
+                font-size: 12px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-bottom: 1px solid #dbdbdb;
+
+                .checkout_box {
+                    display: inline-flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .checkout_box_item {
+                        margin-left: 20px;
+                        color: #808080;
+                        width: 150px;
+                        height: 100%;
+                        box-sizing: border-box;
+
+                        p:first-child {
+                            font-weight: bolder;
+                            color: black;
+                            line-height: 30px;
+                        }
+
+                        p {
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .mir_bottom {
+            font-size: 12px;
+            line-height: 40px;
+            position: relative;
+            span {
+                position: absolute;
+                right: 0px;
+            }
+        }
+        #mir_bottom_line {
+            border-bottom: 1px solid #dbdbdb;
+        }
+        .mirb_big {
+            font-size: 16px;
+            line-height: 67px;
+            span {
+                color: #c10000;
+            }
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: #c10000;
+            color: white;
+            font-size: 12px;
+            border-style: unset;
+        }
+    }
+}

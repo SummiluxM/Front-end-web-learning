@@ -1,0 +1,217 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  position: relative;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+header, nav {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header ul, nav ul, .foot_item ul {
+  list-style-type: none;
+}
+
+header ul li, nav ul li, .foot_item ul li {
+  display: inline-block;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  z-index: 6;
+}
+
+header .header_base {
+  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .header_base .header_items {
+  height: 100%;
+  line-height: 100px;
+}
+
+header .header_base .header_items a {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+header .header_base .header_items a:nth-child(2) {
+  border-left: 1px solid #d6d6d6;
+}
+
+header .header_base .header_items .header_search_box {
+  display: inline-block;
+  width: 160px;
+  height: 30px;
+  border-bottom: 1px solid #d6d6d6;
+  line-height: 24px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+header .header_base .header_items .header_search_box input {
+  height: 24px;
+  width: 130px;
+  border: none;
+  vertical-align: middle;
+  background-color: transparent;
+  font-size: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 5px;
+}
+
+header .header_base .header_items .header_search_box button {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  background-image: url(../04_resource/img/uesr_center/origin/icon_search.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header .header_base .header_items span {
+  height: 24px;
+  width: 24px;
+}
+
+header .header_base .header_items a:nth-last-child(2) {
+  display: inline-block;
+  background-image: url(../04_resource/img/uesr_center/origin/icon_user.png);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+header .header_base .header_items a:nth-last-child(1) {
+  display: inline-block;
+  background-image: url(../04_resource/img/uesr_center/origin/icon_QRcode.png);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+header .header_nav {
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .header_nav ul {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 605px;
+  height: 40px;
+  font-size: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .header_nav ul li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+}
+
+header .header_nav ul li span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 13px;
+}
+
+header .header_nav ul li .header_menu {
+  position: absolute;
+  z-index: -1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 300px;
+  width: 100%;
+  left: 0px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  top: 141px;
+  display: none;
+}
+
+header .header_nav ul li .header_menu li {
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #d6d6d6;
+}
+
+header .header_nav ul li .header_menu li p {
+  line-height: 30px;
+  text-align: center;
+}
+
+header .header_nav ul li .header_menu li:nth-last-child(1) {
+  border-right: none;
+}
+
+header .header_nav ul li .header_menu:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 5;
+}
+
+header .header_nav ul #show_menu:hover ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header_nav ul .hover_red:hover {
+  border-bottom: 2px solid darkred;
+  color: darkred;
+}

@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    position: relative;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+header,nav {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d6d6d6;
+    .header_base,.header_nav,.nav_base {
+        width: 1200px;
+        margin: 0 auto;        
+    }
+}
+
+header ul,nav ul,.foot_item ul {
+    list-style-type: none;
+    li {
+        display: inline-block;
+    }
+}

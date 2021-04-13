@@ -1,0 +1,70 @@
+@import "./global1";
+
+body {
+    font-size: 0px;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+#head_img {
+    width: 100%;
+    img {
+        max-width: 100%;
+        
+    }
+}
+nav {
+    height: 58px;
+    line-height: 42px;
+
+    .nav_base {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 58px;
+        ul {
+            height: 42px;
+            font-size: 13px;
+            line-height: 58px;
+
+            .nav {
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 11px;
+                display: inline-block;
+                height: 58px;
+            }
+        }
+        button {
+            width: 172px;
+            height: 42px;
+            border: 1px solid #dbdbdb;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: transparent;
+        }
+    }
+
+}
+main {
+    margin-top: 36px;
+    div {
+        div {
+            p {
+                margin-bottom: 0px;
+                line-height: 30px;
+                font-size: 12px;
+            }
+            p:last-child {
+                margin-bottom: 20px;
+                color: #a10000;
+                font-size: 16px;
+            }
+        }
+    }
+}
