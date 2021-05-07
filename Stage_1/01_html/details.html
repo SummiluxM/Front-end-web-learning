@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_css/header.css">
+    <link rel="stylesheet" href="../02_css/nav.css">
+    <link rel="stylesheet" href="../02_css/footer.css">
+    <link rel="stylesheet" href="../02_css/details.min.css">
+    <link rel="stylesheet" href="../02_css/right_menu.min.css">
+    <link rel="stylesheet" href="../05_bootstrap/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <script src="../05_bootstrap/jQuery/jquery-3.5.0.min.js"></script>
+    <script src="../05_bootstrap/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../05_bootstrap/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header_base">
+            <img src="../04_resource/img/uesr_center/origin/logo.png">
+            <div class="header_items">
+                <a href="../01_html/sign_in.html">登录</a>
+                <a href="../01_html/log_in.html">注册</a>
+                <div class="header_search_box">
+                    <input type="text" placeholder="热门搜索：干花花瓶"><button></button>
+                </div>
+                <a href="../01_html/user_center_my_center.html" class="user_btn"></a>
+                <a href="#" class="QRcode_btn"></a>
+            </div>
+        </div>
+        <div class="header_nav">
+            <ul>
+                <li class="hover_red">
+                    <a href="../01_html/home_page.html" class="hover_red_a"><span>首页</span></a>
+                </li>
+                <li class=" hover_red" id="show_menu">
+                    <span>所有商品</span>
+                    <ul class="header_menu">
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav1.jpg" alt="">
+                            <p>弄清欧式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav2.jpg" alt="">
+                            <p>浪漫法式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav3.jpg" alt="">
+                            <p>雅致中式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav6.jpg" alt="">
+                            <p>简约现代</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav7.jpg" alt="">
+                            <p>创意装饰</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hover_red"><a href="../01_html/Ornaments.html" class="hover_red_a"><span>装饰摆件</span></a></li>
+                <li class="hover_red"><span>布艺软饰</span></li>
+                <li class="hover_red"><a href="../01_html/wall_decoration.html"
+                        class="hover_red_a"><span>墙饰壁挂</span></a></li>
+                <li class="hover_red"><span>蜡艺香薰</span></li>
+                <li class="hover_red"><span>创意家居</span></li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="nav_base">
+            <ul>
+                <li>首页</li>/
+                <li>装饰摆件</li>/
+                <li>干花花艺</li>/
+                <li class="font-weight-bold">【最家】非洲菊仿真花干花</li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="item_top_base">
+            <div class="itbt_left">
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="ctrl_img1">
+                        <img src="../04_resource/img/details/images/banner1.png" alt="">
+                    </div>
+                    <div class="tab-pane fade" id="ctrl_img2">
+                        <img src="../04_resource/img/details/images/big_img/img6.png" alt="">
+                    </div>
+                    <div class="tab-pane fade" id="ctrl_img3">
+                        <img src="../04_resource/img/details/images/big_img/img3.png" alt="">
+                    </div>
+                    <div class="tab-pane fade" id="ctrl_img4">
+                        <img src="../04_resource/img/details/images/big_img/img7.png" alt="">
+                    </div>
+                </div>
+                <ul id="myTab_bottom" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#ctrl_img1" data-toggle="tab">
+                            <img src="../04_resource/img/details/images/bottom_img_ctrl/img1.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ctrl_img2" data-toggle="tab">
+                            <img src="../04_resource/img/details/images/bottom_img_ctrl/img2.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ctrl_img3" data-toggle="tab">
+                            <img src="../04_resource/img/details/images/bottom_img_ctrl/img3.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ctrl_img4" data-toggle="tab">
+                            <img src="../04_resource/img/details/images/bottom_img_ctrl/img4.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="itbt_right">
+                <h3>【最家】非洲菊仿真花干花</h3>
+                <p>【破损补寄】【适合放室内、卧室、书房、餐桌、办公室、客厅、电视柜等地方】【无理由退换货】【包邮】【白色现代简约花瓶】</p>
+                <h3>￥59.90</h3>
+                <div class="itbtr_1">
+                    <p>颜色分类</p>
+                    <ul id="myTab_right" class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#ctrl_img1" data-toggle="tab">
+                                <img src="../04_resource/img/details/images/right_img_ctrl/img1.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ctrl_img2" data-toggle="tab">
+                                <img src="../04_resource/img/details/images/right_img_ctrl/img2.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ctrl_img3" data-toggle="tab">
+                                <img src="../04_resource/img/details/images/right_img_ctrl/img3.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ctrl_img4" data-toggle="tab">
+                                <img src="../04_resource/img/details/images/right_img_ctrl/img4.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <p>数量 库存<span id="red_font_itbtr">2096</span>件</p>
+                    <div>
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+
+                </div>
+                <div class="itbtr_btn">
+                    <button>立即购买</button>
+                    <button>加入购物车</button>
+                </div>
+            </div>
+        </div>
+        <!-- 商品详情/商品评论 -->
+
+        <div class="item_bottom_base">
+            <div class="ibb_left container">
+                <div class="row">
+                    <ul id="myTab" class="nav nav-tabs col align-self-start">
+                        <li class="active">
+                            <a href="#home" data-toggle="tab">商品详情</a>
+                        </li>
+                        <li>
+                            <a href="#comment" data-toggle="tab">所有评价</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="myTabContent" class="tab-content row">
+                    <div class="tab-pane fade in active col-12" id="home">
+                        <img src="../04_resource/img/details/images/big_img/img1.png">
+                        <img src="../04_resource/img/details/images/big_img/img2.png">
+                        <img src="../04_resource/img/details/images/big_img/img3.png">
+                        <img src="../04_resource/img/details/images/big_img/img4.png">
+                        <img src="../04_resource/img/details/images/big_img/img5.png">
+                        <img src="../04_resource/img/details/images/big_img/img6.png">
+                        <img src="../04_resource/img/details/images/big_img/img7.png">
+                    </div>
+                    <div class="tab-pane fade" id="comment">
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar1.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">馨***呀</h7>
+                                <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装号，全5分</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar2.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">么***周</h7>
+                                <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar1.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">馨***呀</h7>
+                                <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装号，全5分</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar2.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">么***周</h7>
+                                <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar1.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">馨***呀</h7>
+                                <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装号，全5分</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar2.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">么***周</h7>
+                                <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar1.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">馨***呀</h7>
+                                <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装号，全5分</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar2.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">么***周</h7>
+                                <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar1.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">馨***呀</h7>
+                                <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装号，全5分</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment_1">
+                            <div class="comment_avatar">
+                                <img src="../04_resource/img/details/images/comment/Avatar2.png">
+                            </div>
+                            <div class="comment_items">
+                                <h7 class="user_name">么***周</h7>
+                                <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
+                                <div>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img1.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img2.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img3.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img4.png"></span>
+                                    <span href=""><img src="../04_resource/img/details/images/comment/img5.png"></span>
+
+                                </div>
+                                <p>
+                                    <span>2016年12月27日08:31</span>
+                                    <span>颜色分类：大中小三件套（不含花）</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibb_right">
+                <div class="ibb_right_head">为你推荐</div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="../04_resource/img/details/images/right_img/img1.png">
+                            <p>【最家】不锈钢壁饰墙饰软装</p>
+                            <p>￥688.00</p>
+                        </div>
+                        <div class="col-12">
+                            <img src="../04_resource/img/details/images/right_img/img2.png">
+                            <p>【最家】不锈钢壁饰墙饰软装</p>
+                            <p>￥688.00</p>
+                        </div>
+                        <div class="col-12">
+                            <img src="../04_resource/img/details/images/right_img/img3.png">
+                            <p>【最家】不锈钢壁饰墙饰软装</p>
+                            <p>￥688.00</p>
+                        </div>
+                        <div class="col-12">
+                            <img src="../04_resource/img/details/images/right_img/img4.png">
+                            <p>【最家】不锈钢壁饰墙饰软装</p>
+                            <p>￥688.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll_item_base">
+            <p id="sib_head">猜你喜欢</p>
+            <div id="carouse1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="scroll_1" class="d-block w-100 container">
+                            <div class="row justify-content-start flex-nowrap">
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img1.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img2.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img3.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img4.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img5.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="scroll_1" class="d-block w-100 container">
+                            <div class="row justify-content-start flex-nowrap">
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img1.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img2.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img3.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img4.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img5.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="scroll_1" class="d-block w-100 container">
+                            <div class="row justify-content-start flex-nowrap">
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img1.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img2.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img3.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img4.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                                <div class="col-xl-2">
+                                    <img src="../04_resource/img/pay_success/img5.png">
+                                    <p>【最家】复古文艺风玻璃花瓶</p>
+                                    <p>￥688.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouse1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouse1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="right_fixed_meun_icon">
+        <div>
+            <a href="../01_html/shopping_car.html">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_shpping.png" alt="">
+            </a>
+            <div class="rfmi_red_dot">
+                <span>1</span>
+            </div>
+        </div>
+        <div>
+            <a href="">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_phone.png" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="../01_html/user_center_my_center.html">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_user.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="foot_item">
+        <div>
+            <ul>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_7.png" alt="">
+                    <span>7天无理由退货</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_15.png" alt="">
+                    <span>15天免费换货</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_mail.png" alt="">
+                    <span>满599包邮</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_severce.png" alt="">
+                    <span>手机特色服务</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>蜗牛家居©2019-2021公司版权所有 京ICP备080100-xx号
+        <p>违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+    </footer>
+    <script>
+        $(function () {
+            $('#myTab li:eq(0) a').tab('show');
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#myTab_right li:eq(1) a').tab('show');
+        });
+    </script>
+</body>
+
+</html>

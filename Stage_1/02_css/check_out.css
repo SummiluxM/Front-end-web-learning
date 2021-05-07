@@ -20,7 +20,8 @@ header, nav {
 }
 
 header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 
@@ -49,7 +50,7 @@ nav {
 }
 
 nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
   font-size: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -94,7 +95,7 @@ nav .nav_base a {
 }
 
 main {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,10 +106,13 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 main .main_item_left {
-  width: 700px;
+  max-width: 700px;
 }
 
 main .main_item_left h2 {

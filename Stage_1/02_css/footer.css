@@ -20,7 +20,8 @@ header, nav {
 }
 
 header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 
@@ -40,7 +41,8 @@ header ul li, nav ul li, .foot_item ul li {
 }
 
 .foot_item div {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   height: 100%;
   margin: 0px auto;
 }
@@ -61,7 +63,15 @@ header ul li, nav ul li, .foot_item ul li {
 .foot_item div ul li {
   width: 290px;
   line-height: 53px;
-  padding-left: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-right: 1px solid #d6d6d6;
 }
 
@@ -72,6 +82,10 @@ header ul li, nav ul li, .foot_item ul li {
 .foot_item div ul li span {
   margin-left: 10px;
   font-size: 16px;
+}
+
+.foot_item div ul li:first-child {
+  border-left: 1px solid #d6d6d6;
 }
 
 footer {

@@ -21,7 +21,8 @@ header, nav {
 }
 
 header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 
@@ -41,6 +42,23 @@ header {
   width: 100%;
   position: relative;
   z-index: 1;
+}
+
+#head_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#head_img img {
+  max-width: 100%;
 }
 
 nav {
@@ -65,7 +83,7 @@ main {
 }
 
 main .main_base {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0px auto;
 }
 
@@ -112,6 +130,15 @@ main .main_base .main_item1 {
           align-items: center;
   height: 506px;
   margin-top: 30px;
+}
+
+main .main_base .main_item1 .mi_top_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .main_base .main_item1 .mi_top_right {
@@ -219,7 +246,7 @@ main .main_base .main_item2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 892px;
+  height: auto;
   margin-top: 30px;
 }
 

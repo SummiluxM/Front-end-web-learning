@@ -10,6 +10,15 @@ header {
     z-index: 1;
 }
 
+#head_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    img {
+        max-width: 100%;
+    }
+}
 nav {
     height: 42px;
     line-height: 42px;
@@ -31,7 +40,7 @@ main {
     width: 100%;
 
     .main_base {
-        width: 1200px;
+        max-width: 1200px;
         margin: 0px auto;
 
         .main_item_head {
@@ -66,7 +75,10 @@ main {
             align-items: center;
             height: 506px;
             margin-top: 30px;
-
+            .mi_top_left {
+                display: flex;
+                justify-content: center;
+            }
             .mi_top_right {
                 height: 100%;
                 padding: 50px;
@@ -158,7 +170,7 @@ main {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 892px;
+            height: auto;
             margin-top: 30px;
 
             .mi2_right {

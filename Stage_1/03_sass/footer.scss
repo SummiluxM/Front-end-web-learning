@@ -4,7 +4,8 @@
     height: 115px;
     border-top: 1px solid #d6d6d6;
     div {
-        width: 1200px;
+        max-width: 1200px;
+        min-width: 1000px;
         height: 100%;
         margin: 0px auto;
         ul {
@@ -15,7 +16,9 @@
             li {
                 width: 290px;
                 line-height: 53px;
-                padding-left: 72px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 border-right: 1px solid #d6d6d6;
                 img , span {
                     vertical-align: middle;
@@ -24,6 +27,9 @@
                     margin-left: 10px;
                     font-size: 16px;
                 }
+            }
+            li:first-child {
+                border-left: 1px solid #d6d6d6;
             }
             
         }

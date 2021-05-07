@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_css/header.css">
+    <link rel="stylesheet" href="../02_css/nav.css">
+    <link rel="stylesheet" href="../02_css/footer.css">
+    <link rel="stylesheet" href="../02_css/user_center_my_location.min.css">
+    <link rel="stylesheet" href="../02_css/right_menu.min.css">
+    <link rel="stylesheet" href="../05_bootstrap/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <script src="../05_bootstrap/jQuery/jquery-3.5.0.min.js"></script>
+    <script src="../05_bootstrap/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../05_bootstrap/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header_base">
+            <img src="../04_resource/img/uesr_center/origin/logo.png">
+            <div class="header_items">
+                <a href="../01_html/sign_in.html">登录</a>
+                <a href="../01_html/log_in.html">注册</a>
+                <div class="header_search_box">
+                    <input type="text" placeholder="热门搜索：干花花瓶"><button></button>
+                </div>
+                <a href="../01_html/user_center_my_center.html" class="user_btn"></a>
+                <a href="#" class="QRcode_btn"></a>
+            </div>
+        </div>
+        <div class="header_nav">
+            <ul>
+                <li class="hover_red">
+                    <a href="../01_html/home_page.html" class="hover_red_a"><span>首页</span></a>
+                </li>
+                <li class=" hover_red" id="show_menu">
+                    <span>所有商品</span>
+                    <ul class="header_menu">
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav1.jpg" alt="">
+                            <p>弄清欧式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav2.jpg" alt="">
+                            <p>浪漫法式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav3.jpg" alt="">
+                            <p>雅致中式</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav6.jpg" alt="">
+                            <p>简约现代</p>
+                        </li>
+                        <li>
+                            <img src="../04_resource/img/uesr_center/nav/nav7.jpg" alt="">
+                            <p>创意装饰</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="hover_red"><a href="../01_html/Ornaments.html" class="hover_red_a"><span>装饰摆件</span></a></li>
+                <li class="hover_red"><span>布艺软饰</span></li>
+                <li class="hover_red"><a href="../01_html/wall_decoration.html"
+                        class="hover_red_a"><span>墙饰壁挂</span></a></li>
+                <li class="hover_red"><span>蜡艺香薰</span></li>
+                <li class="hover_red"><span>创意家居</span></li>
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="nav_base">
+            <ul>
+                <li>首页</li>/
+                <li>个人中心</li>/
+                <li>我的订单</li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="main_base">
+            <div class="left_nav">
+                <img src="../04_resource/img/uesr_center/origin/user_img.png" alt="">
+                <p>
+                    <a>[ss***k]</a>
+                    <a>[退出登录]</a>
+                </p>
+                <hr>
+                <ul>
+                    <li><a href="" class="bolder">我的交易</a></li>
+                    <li><a href="../01_html/shopping_car.html">我的购物车</a></li>
+                    <li><a href="../01_html/user_center_my_order.html">我的订单</a></li>
+                    <li><a href="../01_html/user_center_my_comment.html">评价晒单</a></li>
+                    <li><a href="" class="bolder">个人中心</a></li>
+                    <li><a href="../01_html/user_center_my_center.html">我的中心</a></li>
+                    <li><a href="../01_html/user_center_my_location.html" class="left_nav_red">地址管理</a></li>
+                    <li><a href="" class="bolder">账户管理</a></li>
+                    <li><a href="../01_html/user_center_my_inform.html">个人信息</a></li>
+                    <li><a href="../01_html/user_center_my_passoword.html">修改密码</a></li>
+                </ul>
+            </div>
+            <!-- <div class="main_item1">
+                <div class="main_item_user">
+                    <p>
+                        <img src="../04_resource/img/uesr_center/origin/user_img.png" alt="">
+                        <span>ss***k</span>
+                    </p>
+                    <h4>
+                        绑定邮箱：12****4@**.com
+                    </h4>
+                </div>
+                <div class="main_item_inform">
+                    <div class="item_inform_box">
+                        <img src="../04_resource/img/uesr_center/block_1/images/block_icon_wallet.png" alt="">
+                        <div>
+                            <p>待支付的订单：<span>0</span></p>
+                            <p>查看待支付订单</p>
+                        </div>
+                    </div>
+                    <div class="item_inform_box">
+                        <img src="../04_resource/img/uesr_center/block_1/images/block_icon_van.png" alt="">
+                        <div>
+                            <p>待收货的订单：<span>0</span></p>
+                            <p>查看待收货订单</p>
+                        </div>
+
+                    </div>
+                    <div class="item_inform_box">
+                        <img src="../04_resource/img/uesr_center/block_1/images/block_icon_message.png" alt="">
+                        <div>
+                            <p>待评价的订单：<span>0</span></p>
+                            <p>查看待评价订单</p>
+                        </div>
+                    </div>
+                    <div class="item_inform_box">
+                        <img src="../04_resource/img/uesr_center/block_1/images/block_icon_heart.png" alt="">
+                        <div>
+                            <p>喜欢的商品：<span>0</span></p>
+                            <p>查看喜欢的</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="main_item2">
+                <h2>全部订单<a href="">请谨防钓鱼诈骗电话，了解更多>></a></h2>
+                <div class="main_item2_nav">
+                    <ul>
+                        <li><a href="" class="main_item2_nav_valid">全部有效订单</a></li>|
+                        <li><a href="">待支付</a></li>|
+                        <li><a href="">待收货</a></li>|
+                        <li><a href="">已关闭</a></li>
+                    </ul>
+                    <div>
+                        <input type="text">
+                        <button></button>
+                    </div>
+                </div>
+                <div class="main_item2_block">
+                    <div class="main_item2_block_up">
+                        <h2>已收货</h2>
+                        <div class="main_item2_nav">
+                            <ul>
+                                <li>2016年12月1日 18:53</li>|
+                                <li>杨小黄</li>|
+                                <li>订单号：5160513358520018</li>|
+                                <li>在线支付</li>
+                            </ul>
+                            <p>订单金额:<span>¥99.99</span>元</p>
+                        </div>
+                    </div>
+                    <div class="main_item2_block_down">
+                        <div class="mibd_left">
+                            <img src="../04_resource/img/uesr_center/block_2/flo1.jpg" alt="">
+                            <div class="mibd_lift_inform">
+                                <p>家用创意菜盘子圆盘&nbsp;釉下彩复古</p>
+                                <p>¥&nbsp;99.99<span>x</span>1</p>
+                            </div>
+                        </div>
+                        <div class="mibd_right">
+                            <p>待评价</p>
+                            <p>订单详情</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_item2_block">
+                    <div class="main_item2_block_up">
+                        <h2 class="font_color_red">待收货</h2>
+                        <div class="main_item2_nav">
+                            <ul>
+                                <li>2016年12月1日 18:53</li>|
+                                <li>杨小黄</li>|
+                                <li>订单号：5160513358520018</li>|
+                                <li>在线支付</li>
+                            </ul>
+                            <p>订单金额:<span>¥99.99</span>元</p>
+                        </div>
+                    </div>
+                    <div class="main_item2_block_down">
+                        <div class="mibd_left">
+                            <img src="../04_resource/img/uesr_center/block_2/flo2.jpg" alt="">
+                            <div class="mibd_lift_inform">
+                                <p>家用创意菜盘子圆盘&nbsp;釉下彩复古</p>
+                                <p>¥&nbsp;99.99<span>x</span>1</p>
+                            </div>
+                        </div>
+                        <div class="mibd_right">
+                            <p class="bgc_red">待评价</p>
+                            <p>订单详情</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_item2_block">
+                    <div class="main_item2_block_up">
+                        <h2 class="font_color_red">待收货</h2>
+                        <div class="main_item2_nav">
+                            <ul>
+                                <li>2016年12月1日 18:53</li>|
+                                <li>杨小黄</li>|
+                                <li>订单号：5160513358520018</li>|
+                                <li>在线支付</li>
+                            </ul>
+                            <p>订单金额:<span>¥99.99</span>元</p>
+                        </div>
+                    </div>
+                    <div class="main_item2_block_down">
+                        <div class="mibd_left">
+                            <img src="../04_resource/img/uesr_center/block_2/flo3.jpg" alt="">
+                            <div class="mibd_lift_inform">
+                                <p>家用创意菜盘子圆盘&nbsp;釉下彩复古</p>
+                                <p>¥&nbsp;99.99<span>x</span>1</p>
+                            </div>
+                        </div>
+                        <div class="mibd_right">
+                            <p class="bgc_red">待评价</p>
+                            <p>订单详情</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_item2_block">
+                    <div class="main_item2_block_up">
+                        <h2>已关闭</h2>
+                        <div class="main_item2_nav">
+                            <ul>
+                                <li>2016年12月1日 18:53</li>|
+                                <li>杨小黄</li>|
+                                <li>订单号：5160513358520018</li>|
+                                <li>在线支付</li>
+                            </ul>
+                            <p>订单金额:<span>¥99.99</span>元</p>
+                        </div>
+                    </div>
+                    <div class="main_item2_block_down">
+                        <div class="mibd_left">
+                            <img src="../04_resource/img/uesr_center/block_2/flo4.jpg" alt="">
+                            <div class="mibd_lift_inform">
+                                <p>家用创意菜盘子圆盘&nbsp;釉下彩复古</p>
+                                <p>¥&nbsp;99.99<span>x</span>1</p>
+                            </div>
+                        </div>
+                        <div class="mibd_right">
+                            <p>交易失败</p>
+                            <p>订单详情</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_item2_bottom_btn">
+                    <button></button>
+                    <span>1</span>
+                    <button></button>
+                </div>
+            </div>
+            <div class="main_item3">
+                <h2>商品评价</h2>
+                <div class="main_item3_nav">
+                    <ul>
+                        <li><a href="" class="main_item3_nav_valid">待评价商品</a></li>|
+                        <li><a href="">已评价商品</a></li>|
+                        <li><a href="">评价失效商品</a></li>
+                    </ul>
+                </div>
+                <div class="main_item3_block">
+                    <div class="mibi_1">
+                        <img src="../04_resource/img/uesr_center/block_3/img1.png">
+                        <p class="font_red">家用创意挂壁&nbsp;釉下彩复古</p>
+                        <p>¥&nbsp;199.00</p>
+                        <p>16000人评价</p>
+                        <button>去评价</button>
+                    </div>
+                    <div class="mibi_1">
+                        <img src="../04_resource/img/uesr_center/block_3/img2.png">
+                        <p class="font_red">家用创意挂壁&nbsp;釉下彩复古</p>
+                        <p>¥&nbsp;199.00</p>
+                        <p>16000人评价</p>
+                        <button>去评价</button>
+                    </div>
+                    <div class="mibi_1">
+                        <img src="../04_resource/img/uesr_center/block_3/img3.png">
+                        <p class="font_red">家用创意挂壁&nbsp;釉下彩复古</p>
+                        <p>¥&nbsp;199.00</p>
+                        <p>16000人评价</p>
+                        <button>去评价</button>
+                    </div>
+                    <div class="mibi_1">
+                        <img src="../04_resource/img/uesr_center/block_3/img4.png">
+                        <p class="font_red">家用创意挂壁&nbsp;釉下彩复古</p>
+                        <p>¥&nbsp;199.00</p>
+                        <p>16000人评价</p>
+                        <button>去评价</button>
+                    </div>
+                </div>
+
+
+
+            </div> -->
+            <div class="main_item4">
+                <h2>收货地址</h2>
+                <div class="main_item4_block">
+                    <button class="mib_left btn" type="button" data-toggle="modal" data-target="#staticBackdrop">
+                        <img src="../04_resource/img/uesr_center/block_4/plus.png">
+                        <p>添加新地址</p>
+                    </button>
+                    <div class="mib_right">
+                        <h3>SS***K</h3>
+                        <p>1573*****666</p>
+                        <p>河北省 唐山市 路北区</p>
+                        <p>唐山市大学公寓村 （063000）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" placeholder="姓名">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="手机号">
+                            </div>
+                            <div class="model_select_button">
+                                <select name="" id="">
+                                    <option value="">省份/自治州</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">城市/地区</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">区/县</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">配送区域</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="邮政编码">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger">保存</button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">关闭</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="main_item5">
+                <h2>个人信息</h2>
+                <div class="main_item5_block">
+                    <div class="mib_left">
+                        <img src="../04_resource/img/uesr_center/origin/user_img.png">
+                    </div>
+                    <div class="mib_right">
+                        <h4>基础资料<span>修改信息</span></h4>
+                        <p>姓名：六六六</p>
+                        <p>生日：1995-06-06</p>
+                        <p>性别：女</p>
+                        <h4>高级设置</h4>
+                        <p>账号地区：中国<span>修改</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_item6">
+                <h2>修改密码</h2>
+                <form action="#">
+                    <table>
+                        <tr>
+                            <th>
+                                选择验证身份方式：
+                            </th>
+                            <td>
+                                <input type="checkbox" name="" id="">
+                                <span>&nbsp;密码验证&nbsp;</span>
+                                <input type="checkbox" name="" id="">
+                                <span>&nbsp;邮箱验证&nbsp;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>原密码：</th>
+                            <td>
+                                <input type="password" name="" id="" placeholder="输入原密码">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td class="small_font">输入原密码</td>
+                        </tr>
+                        <tr>
+                            <th>新密码：</th>
+                            <td>
+                                <input type="password" name="" id="" placeholder="新密码">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td class="small_font">6-16个字符，需要使用字母，数字或符号组合，不能使用纯数字，纯字母，纯符号</td>
+                        </tr>
+                        <tr>
+                            <th>重复新密码：</th>
+                            <td>
+                                <input type="password" name="" id="" placeholder="新密码">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td class="small_font">再次输入密码</td>
+                        </tr>
+                        <tr>
+                            <th>验证码：</th>
+                            <td>
+                                <input type="text" name="" id="">
+                                <img src="../04_resource/img/uesr_center/block_6/images/vfc_code_03.png" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td class="small_font">按右图输入验证码，不区分大小写</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <button>提交</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div> -->
+        </div>
+    </main>
+    <div class="right_fixed_meun_icon">
+        <div>
+            <a href="../01_html/shopping_car.html">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_shpping.png" alt="">
+            </a>
+            <div class="rfmi_red_dot">
+                <span>1</span>
+            </div>
+        </div>
+        <div>
+            <a href="">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_phone.png" alt="">
+            </a>
+        </div>
+        <div>
+            <a href="../01_html/user_center_my_center.html">
+                <img src="../04_resource/img/uesr_center/origin/right_icon_user.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="foot_item">
+        <div>
+            <ul>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_7.png" alt="">
+                    <span>7天无理由退货</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_15.png" alt="">
+                    <span>15天免费换货</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_mail.png" alt="">
+                    <span>满599包邮</span>
+                </li>
+                <li>
+                    <img src="../04_resource/img/uesr_center/origin/foot_icon_severce.png" alt="">
+                    <span>手机特色服务</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>蜗牛家居©2019-2021公司版权所有 京ICP备080100-xx号
+        <p>违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+    </footer>
+</body>
+
+</html>

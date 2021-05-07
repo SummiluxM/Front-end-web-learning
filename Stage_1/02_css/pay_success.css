@@ -20,7 +20,8 @@ header, nav {
 }
 
 header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 
@@ -121,17 +122,32 @@ main .gs_you_like {
 }
 
 main #carouse1 {
-  width: 1160px;
+  max-width: 1200px;
+  min-width: 800px;
   margin: 0px auto;
   position: relative;
 }
 
-main #carouse1 .col-xl-2 {
-  width: 220px;
-  margin-right: 30px;
+main #carouse1 .carousel-inner {
+  max-width: 1200px;
 }
 
-main #carouse1 .col-xl-2 p {
+main #carouse1 .row {
+  max-width: 1200px;
+  min-width: 800px;
+}
+
+main #carouse1 .row .col-xl-2 {
+  width: 220px;
+  margin-right: 25px;
+  padding: 0px;
+}
+
+main #carouse1 .row .col-xl-2 img {
+  width: 100%;
+}
+
+main #carouse1 .row .col-xl-2 p {
   margin-bottom: 0px;
   line-height: 30px;
   font-size: 12px;
@@ -139,20 +155,22 @@ main #carouse1 .col-xl-2 p {
   padding-right: 0px;
 }
 
-main #carouse1 .col-xl-2 p:last-child {
+main #carouse1 .row .col-xl-2 p:last-child {
   margin-bottom: 20px;
   color: #a10000;
   font-size: 16px;
 }
 
 main #carouse1 .carousel-control-prev {
+  width: 30px;
   position: absolute;
-  left: -150px;
+  left: -30px;
 }
 
 main #carouse1 .carousel-control-next {
+  width: 30px;
   position: absolute;
-  left: 1100px;
+  right: 5px;
 }
 
 main #carouse1 .carousel-control-prev-icon {

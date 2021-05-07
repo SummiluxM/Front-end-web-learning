@@ -20,7 +20,8 @@ header, nav {
 }
 
 header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 
@@ -85,7 +86,7 @@ main .main_item1 div {
 }
 
 main .main_item2 {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0px auto;
 }
 

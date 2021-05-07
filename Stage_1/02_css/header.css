@@ -20,7 +20,8 @@ header, nav {
 }
 
 header .header_base, header .header_nav, header .nav_base, nav .header_base, nav .header_nav, nav .nav_base {
-  width: 1200px;
+  max-width: 1200px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 
@@ -66,6 +67,7 @@ header .header_base .header_items a {
   line-height: 24px;
   font-size: 13px;
   vertical-align: middle;
+  color: black;
 }
 
 header .header_base .header_items a:nth-child(2) {
@@ -158,6 +160,16 @@ header .header_nav ul li {
   height: 40px;
 }
 
+header .header_nav ul li a {
+  color: black;
+}
+
+header .header_nav ul li a span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 13px;
+}
+
 header .header_nav ul li span {
   display: inline-block;
   vertical-align: middle;
@@ -180,6 +192,8 @@ header .header_nav ul li .header_menu {
   padding-bottom: 20px;
   top: 141px;
   display: none;
+  -webkit-box-shadow: 0px 5px 5px 5px #00000048;
+          box-shadow: 0px 5px 5px 5px #00000048;
 }
 
 header .header_nav ul li .header_menu li {
@@ -213,5 +227,9 @@ header .header_nav ul #show_menu:hover ul {
 
 header .header_nav ul .hover_red:hover {
   border-bottom: 2px solid darkred;
+  color: darkred;
+}
+
+header .header_nav ul .hover_red_a:hover {
   color: darkred;
 }

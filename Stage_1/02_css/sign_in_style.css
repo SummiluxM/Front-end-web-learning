@@ -13,7 +13,7 @@ div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
-  left: 1129px;
+  right: 327px;
   top: 283px;
   background-color: white;
   border: 1px solid #d6d6d6;
@@ -21,7 +21,6 @@ div {
 }
 
 .sign_in {
-  display: none;
   height: 350px;
   text-align: center;
 }
@@ -93,6 +92,7 @@ div {
 .registered {
   height: 515px;
   text-align: center;
+  display: none;
 }
 
 .registered img {
