@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        完成龟兔赛跑程序：比赛路程由用户输入，兔子速度为每次走5，乌龟每次走2，但兔子每次有50%不跑，乌龟稳定速度，求跑完比赛路程兔子和乌龟用的次数以及谁赢了。(提示：分别用不同变量来表示兔子和乌龟的当前路程。用循环来描述整个比赛过程，每次循环执行时乌龟都会前进2，兔子有50%不走，50%走5)
+    if(Math.random()<0.5){
+    }
+    while(兔子当前路程<比赛路程 &&                        乌龟当前路程 <比赛路程 ){
+    //每次循环都表示为1秒，乌龟稳定速度，兔子50%不跑
+    }
+        */
+        var long = Number(prompt("请输入路程")),
+            Srbt = 0,
+            Trbt = 0,
+            Tttl = long / 2,
+            Sttl = 0;
+        while (Srbt <= long) {
+            if (Math.random() < 0.5) {
+                Srbt += 5;
+                Trbt += 1;
+            } else {
+                Trbt += 1;
+            }
+        }
+        if (Trbt > Tttl) {
+            document.write(`乌龟赢`);
+        } else if (Trbt < Tttl) {
+            document.write(`兔子赢`);
+        } else {
+            document.write(`平局`);
+        }
+    </script>
+</body>
+
+</html>

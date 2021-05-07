@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (var i = 100; i <= 999; i++) {
+            var
+                num1 = parseInt((i / 100) % 10),
+                num2 = parseInt((i / 10) % 10),
+                num3 = parseInt(i % 10);
+            if (i == (num1 * num1 * num1 + num2 * num2 * num2 + num3 * num3 * num3)) {
+                document.write(`${i}<br>`);
+            }
+        }
+    </script>
+</body>
+
+</html>

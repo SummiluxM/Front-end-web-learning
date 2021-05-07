@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ID {
+            width: 648px;
+            height: 209px;
+            background-image: url(../0426/车牌.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: white;
+            line-height: 209px;
+            font-size: 110px;
+            padding-left: 220px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1. var arr=["顺丰","韵达","圆通","顺丰","韵达","京东","京东","韵达","顺丰","京东"];利用所学api完成以下练习：
+        var arr=["顺丰","韵达","圆通","顺丰","韵达","京东","京东","韵达","顺丰","京东"];
+        // // 1-1:获取京东快递第一次出现和最后一次出现的下标
+        // var first_jd=arr.indexOf("京东");
+        // var last_jd=arr.lastIndexOf("京东");
+        // document.write(`首次出现的下标为${first_jd}，最后一次出现的下标为${last_jd}<br>`);
+        // // 1-2:将数组中的 数据进行输出，每个数据之间以-分割
+        // document.write(arr.join("-")+"<br>");
+        // // 1-3:获取最后四个快递并放入到新数组中
+        // var newArr=arr.slice(-4);
+        // document.write(newArr+"<br>");
+        // // 1-4:删除前四个快递并追加1个京东、3个顺丰快递
+        // arr.splice(0,4,"京东","顺丰","顺丰","顺丰");
+        // document.write(arr+"<br>");
+        // // 1-5:将所有快递进行倒序存放
+        // arr.reverse();
+        // document.write(arr+"<br>");
+        // // 1-6:删除第一个和最后一个数据
+        // arr.shift();
+        // arr.pop();
+        // document.write(arr+"<br>");
+
+
+        // 1-7:求出快递数量最多的快递公司并输出数量
+        //正确答案
+        // var counts =[
+        //     ['京东',0],
+        //     ['韵达',0],
+        //     ['顺丰',0],
+        //     ['圆通',0]
+        // ]
+        // for (var i=0;i<arr.length;i++) {
+        //     switch (arr[i]) {
+        //         case "京东":counts[0][1]++;break;
+        //         case "韵达":counts[1][1]++;break;
+        //         case "顺丰":counts[2][1]++;break;
+        //         case "圆通":counts[3][1]++;break;
+        //     }
+        // }
+        // var max=counts[0][1];
+        // for (var i=0;i<counts.length;i++) {
+        //     if (counts[i][1]>max) {
+        //         max=counts[i][1]
+        //     }
+        // }
+        // for(var i=0;i<counts.length;i++) {
+        //     if (counts[i][1]==max) {
+        //         document.write(`${counts[i][0]}的快递最多，数量为${max}<br>`)
+        //     }
+        // }
+
+
+        //错误答案
+        // var counter=[],
+        // max_item=null,
+        // max_number=0;
+        // for (var i=0,length=arr.length;i<length;i++) {
+        //     var temp=arr[i];
+        //     if (counter[temp]===undefined) {
+        //         counter[temp]=1;
+        //     }else{
+        //         counter[temp]++;
+        //     }
+        //     if (counter[temp]>max_number) {
+        //         max_item=temp;
+        //         max_number=counter[temp];
+        //     }
+        // }
+        // document.write(`快递数量最多的快递公司为${max_item},数量为${max_number}`);
+
+
+        // //2. 利用函数知识完成以下题目：
+        // //2-1:定义一个函数，传入一个数字，判断该数是否是水仙花数
+        // function Number_of_daffodils(num) {
+        //     let
+        //         num1 = parseInt((num / 100) % 10),
+        //         num2 = parseInt((num / 10) % 10),
+        //         num3 = parseInt(num % 10);
+        //     if (num < 100 || num >= 1000) {
+        //         document.write('不是水仙花数');
+        //     } else if (num == (num1 * num1 * num1 + num2 * num2 * num2 + num3 * num3 * num3)) {
+        //         document.write('是水仙花数');
+        //     } else {
+        //         document.write('不是水仙花数');
+        //     }
+        // }
+        // Number_of_daffodils(Number(prompt('请输入数字')));
+        // // 2-2:定义一个函数，实现随机一个川A非新能源车牌号，并返回该车牌号
+        // function ID() {
+        //     var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "o", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        //     var number = [];
+        //     for (var i = 0; i < 5; i++) {
+        //         var random = parseInt(Math.random() * 36);
+        //         number.push(arr[random]);
+        //     }
+        //     var output = number.join("");
+        //     return output
+        // }
+        // var print_number=ID()
+        // document.write(`<div class="ID">${print_number}</div>`);
+        // // 2-3:定义一个函数，传入一个数组，判断该数组是否全由数字构成
+        arr = [1, 2, 3, 4];
+        isArrNumber(arr);
+        function isArrNumber(arr) {
+            for (var i = 0; i < arr.length; i++) {
+
+                if (typeof arr[i] == "Number" && arr[i] != NaN) {
+
+                    document.write("true");
+
+                } else {
+
+                    document.write("false");
+                    return false;
+                }
+            }
+            return true;
+        }
+        // // 2-4:定义一个函数，传入一个由数字构成的数组，判断该数组是否是回文数组，比如[1,2,3,2,1]是回文数组，正着读和反着读是一样的。
+        // function return_number(arr) {
+        //     for (var i = 0; i < arr.length; i++) {
+
+        //         if (arr[i] == arr[arr.length - i - 1]) {
+
+        //             document.write("true");
+
+        //         } else {
+
+        //             document.write("false");
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // 2-5:定义一个函数，传入一个数据，实现获取该数据在数组中出现的次数并返回
+        // function item_number(item) {
+        //     var counter = 0,
+        //         number = 0;
+        //     for (var i = 0, length = arr.length; i < length; i++) {
+        //         if (arr[item] == arr[i]) {
+        //             counter++;
+        //         }
+        //     }
+        //     document.write(`数量为${counter}`);
+        // }
+        // var arr=[1,2,3,4,5,5,6,6,6,6]
+        // item_number(Number(prompt('请输入数组中的内容')));
+    </script>
+</body>
+
+</html>

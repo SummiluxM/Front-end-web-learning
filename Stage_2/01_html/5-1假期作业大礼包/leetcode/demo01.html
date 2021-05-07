@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //给定一个整数数组 nums 和一个整数目标值 target，
+        //请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。
+        //你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍
+
+        //遍历数组求和
+        var arr=[1,2,4,5,6];
+        alert(`数组为${arr}`)
+        var target=Number(prompt('请输入两数之和'));
+        //寻找第一个数
+        for(let i=0;i<arr.length;i++) {
+            //在第一个数的基础上寻找第二个数，并避免重复
+            for (let j=i+1;j<arr.length;j++) {
+                    if (arr[i]+arr[j]==target) {
+                        alert([i,j]);
+                    }
+            }
+        }
+    </script>
+</body>
+</html>

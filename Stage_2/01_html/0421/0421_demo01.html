@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var rad = prompt('请输入圆角大小') + '%;',
+            w = prompt('请输入宽度') + 'px;',
+            h = prompt('请输入高度') + 'px;';
+        var style = 'style="' + 'border-radius:' + rad + 'width:' + w + 'height:' + h + 'border:10px solid red"';
+        var circle = "<div " + style + "></div>";
+        document.write(circle);
+    </script>
+</body>
+
+</html>

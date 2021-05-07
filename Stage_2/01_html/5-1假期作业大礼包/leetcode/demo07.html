@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //实现函数 ToLowerCase()，该函数接收一个字符串参数 str，并将该字符串中的大写字母转换成小写字母，之后返回新的字符串
+        let str = "Hello";
+        change(str);
+        function change(str) {
+            let output = ''
+            //大写字母A-Z对应的ASCII码值是65-90
+            //小写字母a-z对应的ASCII码值是97-122
+            for (let i = 0; i < str.length; i++) {
+                //字母转对应的ASCII码值
+                let code = str.charCodeAt(i)
+                //保证输出为小写
+                if (code <= 90 && code >= 65) {
+                //对应的ASCII码值转换为字母
+                    output += String.fromCharCode(code + 32);
+                } else {
+                    output += str[i];
+                }
+            }
+            alert(output);
+        }
+
+
+    </script>
+</body>
+
+</html>

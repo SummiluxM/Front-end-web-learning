@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var year = Number(prompt('请输入年份'));
+        var month = Number(prompt('请输入月份'));
+        var day = Number(prompt('请输入日期'));
+        var sum_day = 0;
+        var
+            month1 = 31,
+            month2 = 28,
+            month3 = 31,
+            month4 = 30,
+            month5 = 31,
+            month6 = 30,
+            month7 = 31,
+            month8 = 31,
+            month9 = 30,
+            month10 = 31,
+            month11 = 30,
+            month12 = 31;
+        switch (month) {
+            case 1: sum_day = 0; break;
+            case 2: sum_day = sum_day + month1; break;
+            case 3: sum_day = sum_day + month1 + month2; break;
+            case 4: sum_day = sum_day + month1 + month2 + month3; break;
+            case 5: sum_day = sum_day + month1 + month2 + month3 + month4; break;
+            case 6: sum_day = sum_day + month1 + month2 + month3 + month4 + month5; break;
+            case 7: sum_day = sum_day + month1 + month2 + month3 + month4 + month5 + month6; break;
+            case 8: sum_day = sum_day + month1 + month2 + month3 + month4 + month5 + month6 + month7; break;
+            case 9: sum_day = sum_day + month1 + month2 + month3 + month4 + month5 + month6 + month7 + month8; break;
+            case 10: sum_day = sum_day + month1 + month2 + month3 + month4 + month5 + month6 + month7 + month8 + month9; break;
+            case 11: sum_day = sum_day + month1 + month2 + month3 + month4 + month5 + month6 + month7 + month8 + month9 + month10; break;
+            case 12: sum_day = sum_day + month1 + month2 + month3 + month4 + month5 + month6 + month7 + month8 + month9 + month10 + month11; break;
+
+        }
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            sum_day = sum_day + day + 1;
+        } else {
+            sum_day = sum_day + day;
+        }
+        alert(sum_day)
+    </script>
+</body>
+
+</html>

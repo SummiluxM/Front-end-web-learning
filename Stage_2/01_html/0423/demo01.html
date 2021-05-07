@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=sc, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var
+            key,
+            name1,
+            password1,
+            name2 = null,
+            password2 = null,
+            count = 0;
+        //使用while控制菜单的大循环
+        while (count == 0) {
+            key = Number(prompt('请输入控制代号:1.登录2.注册3.退出'));
+            switch (key) {
+                //登录功能
+                case 1:
+                    name1 = prompt('请输入用户名');
+                    password1 = prompt('请输入密码');
+                    if (name1 === name2 && password1 === password2) {
+                        alert('登录成功');
+                        //引入二级菜单
+                        second_list();
+                    } else {
+                        alert('登录失败');
+                    }
+                    break;
+                //注册功能
+                case 2:
+                    name2 = prompt('请输入用户名');
+                    password2 = prompt('请输入密码');
+                    alert('注册成功');
+                    break;
+                //退出登录
+                case 3:
+                    count++;
+                    alert('退出成功');
+                    break;
+                default:
+                    document.write('输入不合法');
+                    break;
+            }
+        }
+        //二级菜单方法
+        function second_list() {
+            var menu_key,
+                money = 0,
+                money_out,
+                password3,
+                menu_count = 0;
+            //二级菜单控制结构
+            while (menu_count == 0) {
+                menu_key = Number(prompt('请输入控制代号1.查询余额2.存钱3.取钱4.修改密码5.返回上一级'));
+                switch (menu_key) {
+                    //余额查询
+                    case 1:
+                        alert(`您的余额为${money}`);
+                        break;
+                    //存钱
+                    case 2:
+                        money += Number(prompt('请输入存入金额'));
+                        break;
+                    //判断余额大小并取钱
+                    case 3:
+                        money_out = Number(prompt('请输入取出金额'));
+                        if (money_out > money) {
+                            alert(`余额不足`);
+                        } else {
+                            money -= money_out;
+                            alert(`取出金额${money_out}`);
+                        }
+                        break;
+                    //修改密码
+                    case 4:
+                        password1 = prompt('请输入原密码');
+                        if (password1 === password2) {
+                            password3 = prompt('请输入新密码');
+                            while (password3 == password2) {
+                                alert('新旧密码不能一致');
+                                password3 = prompt('请重新输入');
+                            }
+                            password2 = password3;
+                            alert('修改成功');
+                        } else {
+                            alert('输入错误');
+                        }
+                        break;
+                    //返回上一级
+                    case 5:
+                        menu_count++;
+                        alert('退出成功');
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

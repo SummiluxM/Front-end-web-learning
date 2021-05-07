@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 900px;
+            max-height: 1080px;
+        }
+
+        .body_light {
+            background-color: white;
+            transition: all 1s;
+        }
+
+        .body_dark {
+            background-color: black;
+            transition: all 1s;
+        }
+
+        #switch-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 900px;
+            max-height: 1080px;
+        }
+
+        #OnOff {
+            width: 100px;
+            height: 50px;
+            border: 5px solid rgb(202, 202, 202);
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.308) inset;
+            border-radius: 50px;
+            display: flex;
+        }
+
+        .switch_on {
+            background-color: dodgerblue;
+            
+            transition: all 1s;
+        }
+
+        .switch_off {
+            background-color: rgb(180, 180, 180);
+            transition: all 1s;
+        }
+        .button_on {
+            transform: translateX(50px);
+            transition: all 0.5s;
+        }
+        .button_off {
+            transform: translateX(0px);
+            transition: all 0.5s;
+        }
+        #circle {
+            display: inline-block;
+            background-color: rgb(255, 255, 255);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: -5px -5px 5px 5px rgba(192, 192, 192, 0.411) inset;
+        }
+    </style>
+</head>
+
+<body class="body_light">
+    <!-- html结构，可重写 -->
+    <div id="switch-box">
+        <p id="OnOff" class="switch_off">
+            <span id="circle" class="button_off" onclick="change()"></span>
+        </p>
+    </div>
+    <script>
+        //    思路：点击span标签实现向右移动，并改变body背景颜色。
+
+        function change() {
+            let
+                box = document.querySelector('#OnOff'),
+                button=document.querySelector('#circle'),
+                body = document.body;
+            if (box.getAttribute('class') == 'switch_on') {
+                box.setAttribute('class', 'switch_off');
+                button.setAttribute('class', 'button_off');
+                body.setAttribute('class', 'body_light');
+            } else {
+                box.setAttribute('class', 'switch_on');
+                button.setAttribute('class', 'button_on');
+                body.setAttribute('class', 'body_dark');
+            }
+
+        }
+    </script>
+</body>
+
+</html>

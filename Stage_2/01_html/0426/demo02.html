@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user_bank = [
+            ["aaa","111"],["bbb","222"],["ccc", "333"]
+            ];
+            count=0;
+        for (var i = 1; i <= 3; i++) {
+            var username = prompt("请输入用户名");
+            for (var j = 0; j < user_bank.length; j++) {
+                if (username == name_bank[j][0]) {
+                    count=1;
+                    alert("用户名正确");
+                    var match=j;
+                    j = name_bank.length;
+                    i = i + 3;
+                    for (var m = 1; m <= 3; m++) {
+                        var password = prompt("请输入密码");   
+                            if (password == password_bank[match]) {
+                                alert("密码正确");
+                                m=m+3;
+                            }else {
+                                 alert("密码错误");
+                            }
+                    }                
+                }
+            }
+            if (count==0) {
+                alert("无此用户");
+            }
+        }
+    </script>
+</body>
+</html>

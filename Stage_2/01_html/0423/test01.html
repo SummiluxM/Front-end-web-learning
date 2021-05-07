@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var apple = 2,
+            a = 2,
+            count = 1,
+            avg = 0;
+        while (apple < 100) {
+            count++;
+            a *= 2;
+            apple += a;
+        }
+        apple-=a;
+        count-=1;
+        avg = (apple) / count * 0.8;
+        document.write(`苹果的个数为${apple}买了${count}天,每天${avg}元`);
+    </script>
+</body>
+
+</html>

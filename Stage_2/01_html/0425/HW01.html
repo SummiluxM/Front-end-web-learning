@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [1, 2, 3, 4, 5],
+            length = a.length,
+            index = Number(prompt('1-5')) - 1,
+            temp = prompt('存入数字');
+        document.write(a + "<br>");
+        a.length++;
+        document.write(a.length + "<br>");
+        for (var i = length; i > index; i--) {
+            a[i] = a[i-1];
+        }
+        document.write(a + "<br>");
+        a[index] = temp;
+        document.write(a + "<br>");
+    </script>
+</body>
+
+</html>

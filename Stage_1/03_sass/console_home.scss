@@ -1,0 +1,281 @@
+$red:#bc0108;
+
+header {
+    width: 100%;
+    min-width: 900px;
+    height: 88px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 56px;
+    padding-right: 16px;
+}
+
+main {
+    .col-2 {
+        min-width: 150px;
+        min-height: 900px;
+        a {
+            color: black;
+            font-size: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 0px;
+            padding-right: 0px;
+            text-align: center;
+            span {
+                padding-right: 10px;
+            }
+            i {
+                padding-right: 10px;
+                display: inline-block;
+            }
+
+            .bi-caret-right-fill {
+                padding-right: 0px;
+            }
+
+            &:hover {
+                color: $red;
+                background-color: #f8e8e8;
+                border-right: 5px solid $red;
+            }
+
+
+
+            div {
+                a {
+                    &:hover {
+                        background-color: #f8e8e8;
+                        border-right: 4px solid $red;
+                    }
+                }
+            }
+
+        }
+        a.active {
+            color: $red;
+
+            // i.bi-caret-right-fill {
+            //     transform: rotateZ(90deg);
+            // }
+        }
+        a.arrow_roll {
+            i.bi-caret-right-fill {
+                transform: rotateZ(90deg);
+                transition: all 1s;
+            }
+        }
+        a.collapsed {
+            i.bi-caret-right-fill {
+                transform: rotateZ(0deg);
+                transition: all 1s;
+            }
+        }
+    }
+    .col-10 {
+        min-height: 900px;
+        .tab-content {
+            #home_page {
+                h5 {
+                    line-height: 70px;
+                    padding-left: 32px;
+                    box-sizing: border-box;
+                }
+                .home_page_item {
+                    .first_line {
+                        .card {
+                            width: 24%;
+                            min-width: 300px;
+                            border-top: 5px solid #bc0108;
+                            .card-header {
+                                background-color: transparent;
+                                border-bottom: none;
+                                span:first-child {
+                                    font-size: 16px;
+                                    border-left: 4px solid $red;
+                                }
+                                span:last-child {
+                                    font-size: 12px;
+                                }
+                            }
+                            .card-body {
+                                p:first-child {
+                                    span {
+                                        font-size: 20px;
+                                    }
+                                    span:last-child {
+                                        font-size: 32px;
+                                        font-weight: bolder;
+                                    }
+                                }
+                                p:last-child {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    .second_line {
+                        .tab_left {
+                            background-color: white;
+                            border-top: 5px solid #bc0108;
+                            width: 49%;
+                            min-width: 650px;
+                            .d-flex {
+                                .number_of_buyer {
+                                    font-size: 24px;
+                                }
+                                p {
+                                    span {
+                                        font-size: 14px;
+                                        color: #999999;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .third_line {
+                        .tab_bottom {
+                            border-top: 5px solid #bc0108;
+                            width: 32%;
+                            min-width: 430px;
+                        }
+                    }
+                }
+
+            }
+            .tab-pane:nth-child(2) {
+                h5 {
+                    line-height: 70px;
+                    padding-left: 32px;
+                    box-sizing: border-box;
+                }
+                form{
+                    border-top: 5px solid #bc0108;
+                    div {
+                        label {
+                            text-align: right;
+                            padding-right: 0px;
+                            font-size: 20px;
+                            font-weight: bolder;
+                        }
+                        div {
+                            input {
+                                height: 100%;
+                            }
+                            select {
+                                background-color: #f1f1f1;
+                            }
+                        }
+                    }
+                }
+                .down_pannel {
+                    border-top: 5px solid #bc0108;
+                    table {
+                        height: 50px;
+                        background-color: #f5d9da;
+                        text-align: center;
+                        color: #bc0108;
+                        font-weight: bolder;
+                    }
+                }
+
+            }
+            .tab-pane:nth-child(3) {
+                min-height: 1000px;
+                h5 {
+                    line-height: 70px;
+                    padding-left: 32px;
+                    box-sizing: border-box;
+                }
+                form {
+                    border-top: 5px solid #bc0108;
+                    .left_item {
+                        div {
+                            font-size: 20px;
+                            span {
+                                font-weight: bolder;
+                            }
+                            button {
+                                width: 20%;
+                            }
+                        }
+                    }
+                    .right_item {
+                        div {
+                            button {
+                                width: 15%;
+                            }
+                            .big_button {
+                                font-size: 20px;
+                                font-weight: bold;
+                                border: 3px dashed #cacaca;
+                                height: 400px;
+                            }
+                            .white_button {
+                                width: 20%;
+                                height: 120px;
+                                border: 3px solid #cacaca;
+                            }
+                        }
+                    }
+                }
+            }
+            .tab-pane:nth-child(4) {
+
+                min-height: 900px;
+                h5 {
+                    line-height: 70px;
+                    padding-left: 32px;
+                    box-sizing: border-box;
+                }
+                .tp04_head {
+                    font-size: 20px;
+                    line-height: 37px;
+                    row {
+                        height: 80px;
+                    }
+                    input {
+                        width: 150px;
+                    }
+                }
+                #product_list {
+                    border-top: 5px solid #bc0108;
+                    border-radius: 10px;
+                    thead {
+                        background-color: #f5d9da;
+                        border-radius: 10px;
+                        font-size: 20px;
+                        line-height: 84px;
+                        text-align: center;
+                        td {
+                            width: 13%;
+                        }
+                        .last_col {
+                            width: 22%;
+                        }
+                    }
+                    tbody {
+                        font-size: 16px;
+                        text-align: center;
+                        tr {
+                            height: 84px;
+                        }
+                    }
+                }
+                nav {
+                    a {
+                        border: none;
+                        color: black;
+                        height: 50px;
+                        line-height: 34px;
+                        input {
+                            width: 50px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

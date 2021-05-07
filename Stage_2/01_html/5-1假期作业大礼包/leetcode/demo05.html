@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //请实现一个函数，把字符串 str 中的每个空格替换成"%20"
+        var str = "We are happy.";
+        del_space(str);
+        function del_space(str) {
+            //使用split()api将str拆分为字符串数组
+            str = str.split("");
+            //保存既有数组长度
+            let oldLen = str.length;
+            //统计空格数量
+            let spaceCount = 0;
+            for (let i = 0; i < oldLen; i++) {
+                if (str[i] === ' ') spaceCount++;
+            }
+            //增加数组长度以便添加每个‘%20’中多余的两个字符
+            str.length += spaceCount * 2;
+            //替换数组中的空格
+            //i为可能存在字符的原数组位置
+            //j为将字符存入的新位置
+            for (let i = oldLen - 1, j = str.length - 1; i >= 0; i--, j--) {
+                //字符串无空格，后移至新位置
+                //字符串有空格，依次添加‘%20’至新位置
+                if (str[i] !== ' ') {
+                    str[j] = str[i];
+                } else {
+                    str[j - 2] = '%';
+                    str[j - 1] = '2';
+                    str[j] = '0';
+                    j -= 2;
+                }
+            }
+            alert(str.join(''));
+        }
+    </script>
+</body>
+
+</html>

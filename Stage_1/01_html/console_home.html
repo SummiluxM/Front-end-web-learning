@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../02_css/console_home.min.css">
+  <link rel="stylesheet" href="../05_bootstrap/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <link rel="icon" href="https://jscdn.com.cn/highcharts/images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header class="shadow p-2 mb-2 bg-white rounded">
+    <div class="d-flex justify-content-between align-self-center h-100">
+      <h4 class="d-flex justify-content-between align-items-center m-0">
+        <img src="../04_resource/img/ctrl_center/product_list/images/logo.png">
+        <span class="ml-2">后台管理系统</span>
+      </h4>
+      <ul class="nav">
+        <li class="nav-item d-flex align-items-center">
+          <img src="../04_resource/img/ctrl_center/unnamed.png" alt="">
+          <a class="nav-link active dropdown-toggle text-muted border-right py-0" href="#">user3</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link text-danger border-right py-0" href="#">后台系统</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link text-muted border-right py-0" href="#">修改密码</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link text-muted border-right py-0" href="#">安全退出</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link text-muted py-0" href="#">常见问题解答</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="d-flex">
+    <ul class="nav flex-column col-2 col-xl-2 col-lg-3 col-md-3 pr-0 mt-4 shadow-lg rounded-lg" id="left_nav"
+      role="tablist">
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link active" data-toggle="tab" href="#home_page" role="tab" aria-controls="home_page"
+          aria-selected="true"><i class="bi bi-house-door-fill text-danger"></i><span>首页&emsp;&emsp;</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" href="#"><i class="bi bi-pie-chart-fill text-danger"></i><span>统计&emsp;&emsp;</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" data-toggle="tab" href="#order_page" role="tab" aria-controls="order_page"
+          aria-selected="false"><i class="bi bi-calendar2-check-fill text-danger"></i><span>订单管理</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link arrow_roll collapsed" href="#product_manager" data-toggle="collapse" role="button"
+          aria-expanded="false" aria-controls="product_manager"><i class="bi bi-inboxes-fill text-danger"
+            aria-selected="false"></i></i><span>产品管理</span><i class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="collapse" id="product_manager">
+        <a class="nav-link rounded-lg" data-toggle="tab" href="#add_product" role="tab" aria-controls="add_product"
+          aria-selected="false"><i class="bi bi-bookmark-fill"></i><span>添加产品</span></a>
+        <a class="nav-link rounded-lg" data-toggle="tab" href="#list_product" role="tab" aria-controls="list_product"
+          aria-selected="false"><i class="bi bi-bookmark-fill"></i><span>产品列表</span></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" href="#"><i class="bi bi-archive-fill text-danger"></i><span>库存管理</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" href="#"><i class="bi bi-folder-symlink-fill text-danger"></i><span>物流管理</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" href="#"><i class="bi bi-headset text-danger"></i></i><span>售后管理</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" href="#"><i class="bi bi-credit-card-2-back-fill text-danger"></i></i><span>资金流水</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+      <li class="nav-item rounded border-bottom">
+        <a class="nav-link" href="#"><i class="bi bi-award-fill text-danger"></i><span>会员管理</span><i
+            class="bi bi-caret-right-fill"></i></a>
+      </li>
+    </ul>
+
+    <div class="col-10 col-xl-10 col-lg-9 p-0 col-md-9">
+      <div class="tab-content" id="tab_content">
+
+        <div class="tab-pane px-3 fade mt-4 ml-3 mr-3 shadow-lg show active rounded-lg" id="home_page" role="tabpanel"
+          aria-labelledby="home_page-tab">
+          <h5>首页</h5>
+          <div class="home_page_item">
+            <!-- 首页第一行 -->
+            <div class="row d-flex first_line justify-content-between align-content-between flex-wrap px-3">
+              <div class="card shadow rounded-lg bg-white">
+                <div class="card-header pl-3 pr-3 py-3 d-flex justify-content-between align-items-baseline">
+                  <span class="pl-2">
+                    今日销售总额
+                  </span>
+                  <span class="bg-danger text-white p-1">
+                    查看
+                  </span>
+                </div>
+                <div class="card-body d-flex pl-3 pr-3 py-2 justify-content-between align-items-baseline">
+                  <p class="mb-0">
+                    <span>￥</span>
+                    <span>15982.98</span>
+                  </p>
+                  <p class="mb-0">
+                    <span>比昨日上升20%</span>
+                    <i class="bi bi-graph-up text-danger"></i>
+                  </p>
+                </div>
+              </div>
+              <div class="card shadow rounded-lg bg-white">
+                <div class="card-header pl-3 pr-3 py-3 d-flex justify-content-between align-items-baseline">
+                  <span class="pl-2">
+                    今日订单量
+                  </span>
+                  <span class="bg-danger text-white p-1">
+                    查看
+                  </span>
+                </div>
+                <div class="card-body d-flex pl-3 pr-3 py-2 justify-content-between align-items-baseline">
+                  <p class="mb-0">
+                    <span></span>
+                    <span>2390</span>
+                  </p>
+                  <p class="mb-0">
+                    <span>比昨日上升20%</span>
+                    <i class="bi bi-graph-up text-danger"></i>
+                  </p>
+                </div>
+              </div>
+              <div class="card shadow rounded-lg bg-white">
+                <div class="card-header pl-3 pr-3 py-3 d-flex justify-content-between align-items-baseline">
+                  <span class="pl-2 border-success">
+                    今日发货数量
+                  </span>
+                  <span class="bg-danger text-white p-1">
+                    查看
+                  </span>
+                </div>
+                <div class="card-body d-flex pl-3 pr-3 py-2 justify-content-between align-items-baseline">
+                  <p class="mb-0">
+                    <span></span>
+                    <span>5960</span>
+                  </p>
+                  <p class="mb-0">
+                    <span>比昨日下降20%</span>
+                    <i class="bi bi-graph-down text-success"></i>
+                  </p>
+                </div>
+              </div>
+              <div class="card shadow rounded-lg bg-white">
+                <div class="card-header pl-3 pr-3 py-3 d-flex justify-content-between align-items-baseline">
+                  <span class="pl-2 border-success">
+                    今日评价数量
+                  </span>
+                  <span class="bg-danger text-white p-1">
+                    查看
+                  </span>
+                </div>
+                <div class="card-body d-flex pl-3 pr-3 py-2 justify-content-between align-items-baseline">
+                  <p class="mb-0">
+                    <span></span>
+                    <span>6958</span>
+                  </p>
+                  <p class="mb-0">
+                    <span>比昨日上升20%</span>
+                    <i class="bi bi-graph-up text-danger"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row d-flex second_line justify-content-between align-content-between flex-wrap pl-3">
+              <div class="pl-0 rounded-lg mt-4 px-3 shadow tab_left bg-white">
+                <div class="d-flex justify-content-between align-items-center flex-nowrap py-4">
+                  <span class="number_of_buyer">支付买家数</span>
+                  <p class="mb-0">
+                    <span class="p-2">2017-01-12</span><span>-</span>
+                    <span class="p-2">2018-11-14</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">近7天</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">全国</span>
+                  </p>
+                </div>
+                <div id="container1">
+                </div>
+              </div>
+              <div class="pl-0 rounded-lg mt-4 px-3 shadow tab_left bg-white">
+                <div class="d-flex justify-content-between align-items-center flex-nowrap py-4">
+                  <span class="number_of_buyer">支付买家数</span>
+                  <p class="mb-0">
+                    <span class="p-2">2017-01-12</span><span>-</span>
+                    <span class="p-2">2018-11-14</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">近7天</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">全国</span>
+                  </p>
+                </div>
+                <div id="container2">
+                </div>
+              </div>
+              <div></div>
+            </div>
+            <div class="row d-flex third_line justify-content-between align-content-between flex-wrap px-3">
+              <div class="pl-0 third_line_item rounded-lg mt-4 px-3 shadow tab_bottom bg-white">
+                <div class="d-flex justify-content-between align-items-center flex-nowrap py-4">
+                  <span class="number_of_buyer">支付买家数</span>
+                  <p class="mb-0">
+                    <span class="p-2">2017-01-12</span><span>-</span>
+                    <span class="p-2">2018-11-14</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">近7天</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">全国</span>
+                  </p>
+                </div>
+                <div id="container3">
+                </div>
+              </div>
+              <div class="pl-0 third_line_item rounded-lg mt-4 px-3 shadow tab_bottom bg-white">
+                <div class="d-flex justify-content-between align-items-center flex-nowrap py-4">
+                  <span class="number_of_buyer">支付买家数</span>
+                  <p class="mb-0">
+                    <span class="p-2">2017-01-12</span><span>-</span>
+                    <span class="p-2">2018-11-14</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">近7天</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">全国</span>
+                  </p>
+                </div>
+                <div id="container4">
+                </div>
+              </div>
+              <div class="pl-0 third_line_item rounded-lg mt-4 px-3 shadow tab_bottom bg-white">
+                <div class="d-flex justify-content-between align-items-center flex-nowrap py-4">
+                  <span class="number_of_buyer">支付买家数</span>
+                  <p class="mb-0">
+                    <span class="p-2">2017-01-12</span><span>-</span>
+                    <span class="p-2">2018-11-14</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">近7天</span><span>|</span>
+                    <span class="dropdown-toggle p-2" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">全国</span>
+                  </p>
+                </div>
+                <div id="container5">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane px-3 fade mt-4 ml-4 mr-4 shadow rounded-lg pb-4" id="order_page" role="tabpanel"
+          aria-labelledby="order_page-tab">
+          <h5>订单管理</h5>
+          <form action="" class="rounded-lg shadow px-4 py-5">
+            <div class="from-group row mb-3">
+              <label class="col-1" for="spid">商品ID：</label>
+              <div class="col-3">
+                <input type="text" class="w-100" id="spid">
+              </div>
+            </div>
+            <div class="from-group row mb-3">
+              <label class="col-1" for="spid">商品名称：</label>
+              <div class="col-3">
+                <input type="text" class="w-100" id="spid">
+              </div>
+              <label class="col-1" for="spid">交易时间：</label>
+              <div class="col-3">
+                <input type="text" class="w-100" id="spid">
+              </div>
+              <span>--</span>
+              <div class="col-3">
+                <input type="text" class="w-100" id="spid">
+              </div>
+            </div>
+            <div class="from-group row mb-3">
+              <label class="col-1" for="spid">买家昵称：</label>
+              <div class="col-3">
+                <input type="text" class="w-100" id="spid">
+              </div>
+              <label class="col-1" for="spid">交易类型：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>所有类型</option>
+                </select>
+              </div>
+              <label class="col-1" for="spid">订单状态：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>全部</option>
+                </select>
+              </div>
+            </div>
+            <div class="from-group row mb-3">
+              <label class="col-1" for="spid">订单编号：</label>
+              <div class="col-3">
+                <input type="text" class="w-100" id="spid">
+              </div>
+              <label class="col-1" for="spid">物流服务：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>全部</option>
+                </select>
+              </div>
+              <label class="col-1" for="spid">评价状态：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>全部</option>
+                </select>
+              </div>
+            </div>
+            <div class="from-group row mb-3">
+              <label class="col-1" for="spid">预售状态：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>全部</option>
+                </select>
+              </div>
+              <label class="col-1" for="spid">订单类型：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>全部</option>
+                </select>
+              </div>
+              <label class="col-1" for="spid">售后服务：</label>
+              <div class="col-3">
+                <select class="form-control">
+                  <option>全部</option>
+                </select>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center pt-4">
+              <button type="button" class="btn btn-danger mr-2">搜索订单</button>
+              <button type="button" class="btn btn-light ml-2">批量导出</button>
+            </div>
+          </form>
+          <div class="down_pannel px-4 pt-0 pb-4 rounded-lg shadow my-4">
+            <ul class="nav py-4">
+              <li class="nav-item">
+                <a class="nav-link text-danger border-right" href="#">近一个月订单</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">等待买家付款</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">等待发货</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">已发货</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">退款中</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">需要评价</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">成功的订单</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary border-right" href="#">关闭的订单</a>
+              </li>
+            </ul>
+            <table class="w-100">
+              <tr>
+                <td>商品</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>销售单位</td>
+                <td>交易状态</td>
+                <td>实收款</td>
+                <td>评价</td>
+              </tr>
+            </table>
+            <div class="dp_img d-flex justify-content-center py-4">
+              <img src="../04_resource/img/ctrl_center/order/images/empty.png">
+            </div>
+            <p class="mb-0">
+              <input type="checkbox">
+              <span>全选</span>
+              <button type="button" class="btn btn-light">批量发货</button>
+              <button type="button" class="btn btn-light">批量标记</button>
+              <button type="button" class="btn btn-light">批量免运费</button>
+              <input type="checkbox">
+              <span>不显示已关闭订单</span>
+            </p>
+          </div>
+        </div>
+        <div class="tab-pane fade mt-4 ml-4 mr-4 shadow-lg px-5 pb-4 rounded-lg" id="add_product" role="tabpanel"
+          aria-labelledby="add_product">
+          <h5>添加产品</h5>
+          <form action="" class="row rounded-lg shadow">
+            <div class="col-6 p-5 left_item border-right">
+              <div class="form-group">
+                <label for="">产品名称：</label>
+                <input type="text" class="form-control" id="">
+              </div>
+              <div class="form-group">
+                <label for="">产品分类：</label>
+              </div>
+              <div class="form-group d-flex">
+                <input type="text" class="form-control" id="">
+                <button type="button" class="btn btn-danger w-25  ml-2">管理分类</button>
+              </div>
+              <div class="form-group d-flex justify-content-between align-items-center mt-5">
+                <span>产品参数</span>
+                <button type="button" class="btn btn-danger ml-2">管理参数</button>
+              </div>
+              <div class="form-group">
+                <label for="">货号：</label>
+                <input type="text" class="form-control" id="">
+              </div>
+              <div class="form-group">
+                <label for="">条码：</label>
+                <input type="text" class="form-control" id="">
+              </div>
+              <div class="form-group">
+                <label for="">价格：</label>
+                <input type="text" class="form-control" id="">
+              </div>
+              <div class="form-group">
+                <label for="">产地：</label>
+                <input type="text" class="form-control" id="">
+              </div>
+            </div>
+            <div class="col-6 p-5 right_item">
+              <div class="py-3">
+                <button type="button" class="btn btn-danger mr-2">图片</button>
+                <button type="button" class="btn btn-light">视频</button>
+              </div>
+              <div>
+                <button class="btn w-100 big_button">
+                  +添加图片
+                </button>
+              </div>
+              <div class="pt-3">
+                <button class="white_button mr-3 bg-white"></button>
+                <button class="white_button bg-white"></button>
+              </div>
+              <div class="pt-3">
+                <button type="submit" class="btn btn-danger mr-3">保存</button>
+                <button type="reset" class="btn btn-light">取消</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade mt-4 ml-4 mr-4 shadow-lg px-5 pb-4 rounded-lg" id="list_product" role="tabpanel"
+          aria-labelledby="list_product-tab">
+          <h5>产品列表</h5>
+          <form action="" class="w-100 tp04_head border-bottom">
+            <div class="from-group pb-4 d-flex">
+              <button type="button" class="btn btn-danger mr-3">批量操作</button>
+              <label for="spid" class="mb-0">产品名称：</label>
+              <div>
+                <input type="text" class="h-100 mr-3" id="spid">
+              </div>
+              <label for="spid" class="mb-0">商品分类：</label>
+              <div>
+                <input type="text" class="h-100  mr-3" id="spid">
+              </div>
+              <button type="button" class="btn btn-danger">查询</button>
+            </div>
+          </form>
+          <table class="table-striped w-100 mt-4 shadow" id="product_list">
+            <thead class="">
+              <tr class="">
+                <td>商品名称</td>
+                <td>商品图片</td>
+                <td>分类</td>
+                <td>单价</td>
+                <td>库存</td>
+                <td>录入时间</td>
+                <td class="last_col">操作</td>
+              </tr>
+
+            </thead>
+            <tbody>
+              <tr>
+                <td>进口芒果</td>
+                <td><img src="../04_resource/img/ctrl_center/product_list/images/img1.png" alt=""></td>
+                <td>热卖推荐</td>
+                <td>￥58.00</td>
+                <td>3464</td>
+                <td>2020-07-22</td>
+                <td>
+                  <ul class="nav py-2 d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right px-1" href="#">详情</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right px-1" href="#">修改</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger px-1" href="#">删除</a>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>进口芒果</td>
+                <td><img src="../04_resource/img/ctrl_center/product_list/images/img1.png" alt=""></td>
+                <td>热卖推荐</td>
+                <td>￥58.00</td>
+                <td>3464</td>
+                <td>2020-07-22</td>
+                <td>
+                  <ul class="nav py-2 d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">详情</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">修改</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger px-1" href="#">删除</a>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>进口芒果</td>
+                <td><img src="../04_resource/img/ctrl_center/product_list/images/img1.png" alt=""></td>
+                <td>热卖推荐</td>
+                <td>￥58.00</td>
+                <td>3464</td>
+                <td>2020-07-22</td>
+                <td>
+                  <ul class="nav py-2 d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">详情</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">修改</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger px-1" href="#">删除</a>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>进口芒果</td>
+                <td><img src="../04_resource/img/ctrl_center/product_list/images/img1.png" alt=""></td>
+                <td>热卖推荐</td>
+                <td>￥58.00</td>
+                <td>3464</td>
+                <td>2020-07-22</td>
+                <td>
+                  <ul class="nav py-2 d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">详情</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">修改</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger px-1" href="#">删除</a>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>进口芒果</td>
+                <td><img src="../04_resource/img/ctrl_center/product_list/images/img1.png" alt=""></td>
+                <td>热卖推荐</td>
+                <td>￥58.00</td>
+                <td>3464</td>
+                <td>2020-07-22</td>
+                <td>
+                  <ul class="nav py-2 d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">详情</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">修改</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger px-1" href="#">删除</a>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>进口芒果</td>
+                <td><img src="../04_resource/img/ctrl_center/product_list/images/img1.png" alt=""></td>
+                <td>热卖推荐</td>
+                <td>￥58.00</td>
+                <td>3464</td>
+                <td>2020-07-22</td>
+                <td>
+                  <ul class="nav py-2 d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">详情</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger border-right  px-1" href="#">修改</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-danger px-1" href="#">删除</a>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end  pt-4">
+              <li class="page-item disabled">
+                <a class="page-link " href="#" tabindex="-1" aria-disabled="true">&lt;</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">...</a></li>
+              <li class="page-item"><a class="page-link" href="#">999</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">&gt;</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="">
+                  <span>前往</span>
+                  <input type="text" class="h-100">
+                  <span>页</span>
+                </a>
+
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+  <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com.cn/highcharts/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+  <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+  <script>
+    var chart = Highcharts.chart('container1', {
+      chart: {
+        type: 'area'
+      },
+      title: {
+        text: '美苏核武器库存量'
+      },
+      subtitle: {
+        text: '数据来源: <a href="https://thebulletin.metapress.com/content/c4120650912x74k7/fulltext.pdf">' +
+          'thebulletin.metapress.com</a>'
+      },
+      xAxis: {
+        allowDecimals: false
+      },
+      yAxis: {
+        title: {
+          text: '核武库国家'
+        },
+        labels: {
+          formatter: function () {
+            return this.value / 1000 + 'k';
+          }
+        }
+      },
+      tooltip: {
+        pointFormat: '{series.name} 制造 <b>{point.y:,.0f}</b>枚弹头'
+      },
+      plotOptions: {
+        area: {
+          pointStart: 1940,
+          marker: {
+            enabled: false,
+            symbol: 'circle',
+            radius: 2,
+            states: {
+              hover: {
+                enabled: true
+              }
+            }
+          }
+        }
+      },
+      series: [{
+        name: '美国',
+        data: [null, null, null, null, null, 6, 11, 32, 110, 235, 369, 640,
+          1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
+          27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662,
+          26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605,
+          24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586,
+          22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950,
+          10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104]
+      }, {
+        name: '苏联/俄罗斯',
+        data: [null, null, null, null, null, null, null, null, null, null,
+          5, 25, 50, 120, 150, 200, 426, 660, 869, 1060, 1605, 2471, 3322,
+          4238, 5221, 6129, 7089, 8339, 9399, 10538, 11643, 13092, 14478,
+          15915, 17385, 19055, 21205, 23044, 25393, 27935, 30062, 32049,
+          33952, 35804, 37431, 39197, 45000, 43000, 41000, 39000, 37000,
+          35000, 33000, 31000, 29000, 27000, 25000, 24000, 23000, 22000,
+          21000, 20000, 19000, 18000, 18000, 17000, 16000]
+      }]
+    });
+  </script>
+  <script>
+    var chart = Highcharts.chart('container2', {
+      title: {
+        text: '2010 ~ 2016 年太阳能行业就业人员发展情况'
+      },
+      subtitle: {
+        text: '数据来源：thesolarfoundation.com'
+      },
+      yAxis: {
+        title: {
+          text: '就业人数'
+        }
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+      },
+      plotOptions: {
+        series: {
+          label: {
+            connectorAllowed: false
+          },
+          pointStart: 2010
+        }
+      },
+      series: [{
+        name: '安装，实施人员',
+        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+      }, {
+        name: '工人',
+        data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+      }, {
+        name: '销售',
+        data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+      }, {
+        name: '项目开发',
+        data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+      }, {
+        name: '其他',
+        data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+      }],
+      responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 500
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom'
+            }
+          }
+        }]
+      }
+    });
+  </script>
+  <script>
+    var chart = Highcharts.chart('container3', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: '堆叠柱形图'
+      },
+      xAxis: {
+        categories: ['苹果', '橘子', '梨', '葡萄', '香蕉']
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: '水果消费总量'
+        },
+        stackLabels: {  // 堆叠数据标签
+          enabled: true,
+          style: {
+            fontWeight: 'bold',
+            color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+          }
+        }
+      },
+      legend: {
+        align: 'right',
+        x: -30,
+        verticalAlign: 'top',
+        y: 25,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+        borderColor: '#CCC',
+        borderWidth: 1,
+        shadow: false
+      },
+      tooltip: {
+        formatter: function () {
+          return '<b>' + this.x + '</b><br/>' +
+            this.series.name + ': ' + this.y + '<br/>' +
+            '总量: ' + this.point.stackTotal;
+        }
+      },
+      plotOptions: {
+        column: {
+          stacking: 'normal',
+          dataLabels: {
+            enabled: true,
+            color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+            style: {
+              // 如果不需要数据标签阴影，可以将 textOutline 设置为 'none'
+              textOutline: '1px 1px black'
+            }
+          }
+        }
+      },
+      series: [{
+        name: '小张',
+        data: [5, 3, 4, 7, 2]
+      }, {
+        name: '小彭',
+        data: [2, 2, 3, 2, 1]
+      }, {
+        name: '小潘',
+        data: [3, 4, 4, 2, 5]
+      }]
+    });
+  </script>
+  <script>
+    var chart = Highcharts.chart('container4', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: '百分比堆叠柱形图'
+      },
+      xAxis: {
+        categories: ['苹果', '橘子', '梨', '葡萄', '香蕉']
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: '水果消费总量'
+        }
+      },
+      tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b>' +
+          '({point.percentage:.0f}%)<br/>',
+        //:.0f 表示保留 0 位小数，详见教程：https://www.hcharts.cn/docs/basic-labels-string-formatting
+        shared: true
+      },
+      plotOptions: {
+        column: {
+          stacking: 'percent'
+        }
+      },
+      series: [{
+        name: '小张',
+        data: [5, 3, 4, 7, 2]
+      }, {
+        name: '小彭',
+        data: [2, 2, 3, 2, 1]
+      }, {
+        name: '小潘',
+        data: [3, 4, 4, 2, 5]
+      }]
+    });
+  </script>
+  <script>
+    Highcharts.chart('container5', {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: '2018年1月浏览器市场份额'
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            }
+          }
+        }
+      },
+      series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+          name: 'Chrome',
+          y: 61.41,
+          sliced: true,
+          selected: true
+        }, {
+          name: 'Internet Explorer',
+          y: 11.84
+        }, {
+          name: 'Firefox',
+          y: 10.85
+        }, {
+          name: 'Edge',
+          y: 4.67
+        }, {
+          name: 'Safari',
+          y: 4.18
+        }, {
+          name: 'Sogou Explorer',
+          y: 1.64
+        }, {
+          name: 'Opera',
+          y: 1.6
+        }, {
+          name: 'QQ',
+          y: 1.2
+        }, {
+          name: 'Other',
+          y: 2.61
+        }]
+      }]
+    });
+  </script>
+  <script src="../05_bootstrap/jQuery/jquery-3.5.0.min.js"></script>
+  <script src="../05_bootstrap/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../05_bootstrap/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+  <!-- active无法自动切换bug补丁 -->
+  <script>
+    // $(document).ready(function () {
+    //   $('ul').click(function (e) {
+    //     e.preventDefault();
+    //     $('ul').removeClass('active');
+    //     $(this).addClass('active');
+
+    //   });
+
+    // });
+  </script>
+
+</body>
+
+</html>

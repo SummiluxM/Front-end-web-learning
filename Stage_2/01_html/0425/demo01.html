@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ck=["顺丰","圆通","韵达","韵达","中通","京东","百世"];
+        for (var i in ck) {
+            document.write(ck[i]);
+        }
+        document.write(ck[ck.length]);
+        ck.length--;
+        for (i in ck) {
+            document.write(ck[i]);
+        }
+        document.write(ck.length);
+        for (var j=ck.length-1;j>=0;j--) {
+            document.write(ck[j]);
+        }
+        
+    </script>
+</body>
+</html>

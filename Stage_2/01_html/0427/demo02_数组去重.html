@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ["韵达", "圆通", "韵达", "京东", "京东", "韵达", "顺丰", "京东", 5];
+        arr_del_rpt1();
+        arr_del_rpt2();
+        //方法1：先排序再检查旁位数据
+        function arr_del_rpt1() {
+            let arr1 = arr;
+            arr1.sort();
+            document.write(arr1 + "<br>");
+            let temp = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr1[i] != arr1[i + 1]) {
+                    temp.push(arr1[i]);
+                }
+            }
+            document.write(temp + "<br>");
+        }
+        //方法2：利用下标判断
+        function arr_del_rpt2() {
+            let arr1 = [];
+            arr1.push(arr[0]);
+            for (let i = 0; i < arr.length; i++) {
+                if (arr1.indexOf(arr[i]) == -1) {
+                    arr1.push(arr[i]);
+                }
+            }
+            document.write(arr1 + "<br>");
+        }
+        //方法3：对原数组进行循环嵌套去重
+        function arr_del_rpt3() {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j=i;j<arr.length;j++) {
+                    if(arr[i]==arr[j]&&i!=j){
+                        arr.splice(j,1);
+                        j--;
+                    }
+                }
+            }
+            document.write(arr + "<br>");
+        }
+        //方法4：set去重
+        function arr_del_rpt4() {
+            let arr1=[...new Set(arr)];
+            document.write(arr1);
+        }
+
+    </script>
+</body>
+
+</html>

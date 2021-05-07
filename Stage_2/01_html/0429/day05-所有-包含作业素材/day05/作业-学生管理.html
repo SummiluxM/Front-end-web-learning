@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>学生信息管理系统</h1>
+    <h2>学生添加</h2>
+    姓名:<input type="text" id="username">
+    年龄: <button onclick="negative(this)">-</button>
+    <input type="number" id="age" value="18" readonly>
+    <button onclick="positive(this)">+</button>
+    性别: <select name="" id="sex">
+        <option value="男" selected>男</option>
+        <option value="女">女</option>
+    </select>
+    <button onclick="addstudent()">添加</button>
+    <h2>学生列表</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="insert_base">
+        </tbody>
+    </table>
+    <script>
+        let father = document.querySelector("#insert_base");
+        let name=document.querySelector('#username');
+        let age=document.querySelector('#age');
+        let sex=document.querySelector('#sex');
+        //减号功能
+        function negative(btn) {
+            let userage = btn.nextElementSibling;
+            if(userage.value<=18) {
+                userage.value=18;
+            } else {
+                userage.value--;
+            }
+            
+        }
+        //加号功能
+        function positive(btn) {
+            let userage = btn.previousElementSibling;
+            userage.value++;
+        }
+        //添加学生信息到表格
+        function addstudent() {
+            let newTd = document.createElement('tr');
+            newTd.innerHTML=`
+            <td>${name.value}</td>
+            <td>${age.value}</td>
+            <td>${sex.value}</td>
+            <td><button onclick="del(this)">开除</button></td>
+            `;
+            father.appendChild(newTd);
+        }
+        //删除学生信息
+        function del(elem) {
+            let grand=(elem.parentElement).parentElement;
+            father.removeChild(grand);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //倒序输出
+        // var a=[1,2,3,4,5,6,7,8,9,10,11],
+        // length=a.length;
+        // document.write(a+"<br>");
+        // for (var i=0;i<length/2;i++){
+        //     var temp=a[i];
+        //     a[i]=a[length-1-i];
+        //     a[length-i-1]=temp;
+        // }
+        // document.write(a);
+
+
+        //删除数组中任一数
+        // var a=[1,2,3,4,5,6,7,8,9,10];
+        // document.write(a+"<br>");
+        // index=Number(prompt('1-10'))-1,
+        // temp=a[index];
+        // for (var i=index;i<a.length-1;i++) {
+        //     a[i]=a[i+1];
+        // }
+        // a[i]=temp;
+        // document.write(a+"<br>");
+        // a.pop();
+        // document.write(a+"<br>");
+
+
+        var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            length = a.length,
+            index = Number(prompt('1-10')) - 1,
+            temp = Number(prompt('存入数字'));
+        document.write(a + "<br>");
+        a.length++;
+        document.write(a.length + "<br>");
+        for (var i = length; i <= index; i--) {
+            a[i + 1] = a[i];
+        }
+        document.write(a + "<br>");
+        a[index] = temp;
+        document.write(a + "<br>");
+    </script>
+</body>
+
+</html>

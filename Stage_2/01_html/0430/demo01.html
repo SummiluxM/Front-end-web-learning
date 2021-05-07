@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../0430/day06-定时器/day06/img/butterfly/butterfly-frame0.png" alt="">
+    <br>
+    <button onclick="pause();">暂停</button>
+    <button onclick="start();">继续</button>
+    <script>
+        var img =document.querySelector('img');
+        var i=0;
+        var timer;
+        function pause() {
+            clearInterval(timer);
+        }
+        function start() {
+            timer=setInterval(
+                function() {
+                    img.setAttribute('src',`../0430/day06-定时器/day06/img/butterfly/butterfly-frame${i}.png`);
+                    i++;
+                    if (i>7) {
+                        i=0;
+                    }
+                },
+                30
+            )
+        }
+    </script>
+</body>
+</html>

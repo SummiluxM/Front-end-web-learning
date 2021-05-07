@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求： 用户可以输入多次的字符并输出。当某次输入y就结束。
+        // 至少会执行一次的循环情况。---更好解决方案---do...while
+         //var userinput = prompt('请输入内容');
+
+        // while(userinput!='y'){
+        //     // console.log(userinput);
+        //     //重新输入
+        //      userinput = prompt('请输入内容');
+        // }
+
+        do{
+            var userinput = prompt('请输入内容');
+            document.write(userinput+"<br>");
+        }while(userinput!="y");
+
+    </script>
+</body>
+</html>

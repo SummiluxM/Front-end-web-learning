@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let
+        //     w = prompt('请输入宽度'),
+        //     h = prompt('请输入高度'),
+        //     r = prompt('请输入红色值'),
+        //     g = prompt('请输入绿色值'),
+        //     b = prompt('请输入蓝色值'),
+        //     a = prompt('请输入透明值'),
+        //     circle = `<div style="width: ${w}px;
+        //         height: ${h}px;
+        //         border-radius: 50%;
+        //         background-color: rgba(${r},${g},${b},${a});"></div>`;
+        // document.write(circle);
+        // let
+        //     num1=Number(prompt('请输入第一个数'));
+        //     num2=Number(prompt('请输入第二个数'));
+        //     document.write(num1>num2);
+        //     document.write((num1<1000)&&(num1>100));
+            // num1=Number(prompt('请输入第一个数'));
+            // num2=Number(prompt('请输入第二个数'));
+            // if(num1 == num2) {
+            //     document.write('num1等于num2');
+            // }else {
+            //     document.write('num1不等于num2');
+            // }
+            var hour =new Date().getHours();
+            // let hour=Number(prompt('请输入时间'));
+            if(hour>=7&&hour<=12) {
+                document.write('上午');
+            }else if (hour>=13&&hour<=17) {
+                document.write('下午');
+            }else if (hour>=18&&hour<=24) {
+                document.write('晚上');
+            }else if (hour>=0&&hour<=6) {
+                document.write('晚上');
+            }
+    </script>
+</body>
+
+</html>

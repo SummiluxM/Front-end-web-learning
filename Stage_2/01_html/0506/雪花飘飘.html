@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(../0506/雪花素材/snow-night.jpg);
+            background-size: cover;
+        }
+
+        .active_snow {
+            transform: translateY(1500px);
+            transition: all 10s;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="snow()">下雪</button>
+    <button onclick="start()">开始</button>
+    <button onclick="stop()">停止</button>
+    <button onclick="del()">删除</button>
+    <script>
+        var body = document.body;
+        var timer1, timer2, timer3;
+        function snow() {
+            for (let i = 1; i < 20; i++) {
+                var top = Math.floor(Math.random() * 900);
+                var left = Math.floor(Math.random() * 1900);
+                let new_img = document.createElement('img');
+                new_img.setAttribute('src', './雪花素材/snow-white.png');
+                new_img.setAttribute('style', `position: fixed;top:${top}px;left:${left}px`);
+                body.appendChild(new_img);
+            }
+        }
+        function start() {
+            timer2 = setInterval(
+                function () {
+                    var imgs = document.querySelectorAll('img');
+                    for (let i = 0; i < imgs.length; i++) {
+                        var img = imgs[i];
+                        var style = getComputedStyle(img, null);
+                        var old_top = style.top;
+                        old_top = Number(old_top.substr(0, old_top.length - 2))
+                        if (old_top < 1000) {
+                            img.style.top = old_top + 2 + 'px';
+
+                        } else {
+                            img.style.top = '-40px';
+                        }
+                    }
+                }
+                , 10)
+        }
+        function stop() {
+            clearInterval(timer2);
+        }
+        function del() {
+            var imgs = document.querySelectorAll('img');
+            for (let i = 0; i < imgs.length; i++) {
+                imgs[i].parentElement.removeChild(imgs[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

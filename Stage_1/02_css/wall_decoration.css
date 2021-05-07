@@ -221,6 +221,11 @@ main .main_base .mi_picture_block .mipb_img {
   padding-top: 5px;
 }
 
+main .main_base .mi_picture_block .mipb_img img:hover {
+  -webkit-box-shadow: 0px 0px 5px 5px #d6d6d6;
+          box-shadow: 0px 0px 5px 5px #d6d6d6;
+}
+
 main .main_base .mi_picture_block .mipb_img p {
   margin: 0px;
 }
@@ -263,6 +268,11 @@ main .main_base .main_item2 .mi2_right {
       align-content: space-between;
   height: 892px;
   margin-left: 40px;
+}
+
+main .main_base .main_item2 .mi2_right img:hover {
+  -webkit-box-shadow: 0px 0px 5px 5px #d6d6d6;
+          box-shadow: 0px 0px 5px 5px #d6d6d6;
 }
 
 main .main_base .main_item2 .mi2_right p {
@@ -319,6 +329,11 @@ main .main_base #main_item3_pic_block .mipb_img {
           box-sizing: border-box;
   padding-top: 35px;
   padding-bottom: 35px;
+}
+
+main .main_base #main_item3_pic_block .mipb_img img:hover {
+  -webkit-box-shadow: 0px 0px 5px 5px #d6d6d6;
+          box-shadow: 0px 0px 5px 5px #d6d6d6;
 }
 
 main .main_base #main_item3_pic_block .mipb_img p {

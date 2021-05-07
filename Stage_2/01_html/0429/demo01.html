@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="input" type="text" value="">
+    <button class="changeImg" onclick="changeImg()">更改图片</button>
+    <button class="radomImg" onclick="radomImg()">随机图片</button>
+    <button class="addImg" onclick="addImg()">添加图片</button>
+    <button class="addImg" onclick="addImg_before()">在开头添加图片</button>
+    <button class="delImg" onclick="delAllImg()">删除所有图片</button>
+    <img src="./day05/img/id1.jpg" alt="" id="img">
+    <div id="img_base">
+
+    </div>
+    <script>
+        let input = document.querySelector(".input"),
+            img = document.querySelector("#img");
+        let father = document.querySelector("#img_base");
+        function changeImg() {
+            let src = input.value;
+            img.setAttribute("src", `./day05/img/id${src}.jpg`);
+        }
+        function radomImg() {
+            let src = 1 + parseInt(Math.random() * 7);
+            img.setAttribute("src", `./day05/img/id${src}.jpg`);
+        }
+        function addImg() {
+            let newImg = document.createElement("img");
+            let src = 1 + parseInt(Math.random() * 7);
+            newImg.setAttribute("src", `./day05/img/id${src}.jpg`);
+            newImg.setAttribute("onclick",`deself(this);`)
+            father.appendChild(newImg);
+        }
+        function addImg_before() {
+            let newImg = document.createElement("img");
+            let img= document.querySelector("#img_base img");
+            let src = 1 + parseInt(Math.random() * 7);
+            newImg.setAttribute("src", `./day05/img/id${src}.jpg`);
+            father.insertBefore(newImg,img);
+        }
+        function delAllImg() {
+            let imgs = document.querySelectorAll('#img_base img');
+            for (let i = 0; i < imgs.length; i++) {
+            father.removeChild(imgs[i]);
+            }
+        }
+        function deself(elem) {
+            father.removeChild(elem);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //4. 输入数字 n，按顺序打印出从 1 到最大的 n 位十进制数。
+        //比如输入 3，则打印出 1、2、3 一直到最大的 3 位数 999。输入2，则输出1 2 3 一直到99 ，二位数的最大值。 
+        var num = Number(prompt('输入一个数'));
+        var arr=[];
+        //易得最大数为10^num-1,遍历并将每次结果放入数组中，然后输出
+        for (let i = 1; i <= Math.pow(10, num) - 1; i++) {
+            arr.push(i);
+        }
+        alert(arr);
+    </script>
+</body>
+
+</html>

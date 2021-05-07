@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            background-color: rgb(207, 207, 207);
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table td {
+            width: 25%;
+            padding-left: 3%;
+        }
+
+        button {
+            width: 95%;
+            height: 90%;
+            font-size: 20px;
+            font-weight: bolder;
+            background-color: powderblue;
+            color: gray;
+            transition: all 0.5s;
+            border-style: none;
+            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(231, 252, 255);
+            transition: all 0.5s;
+            color: rgb(77, 77, 77);
+        }
+
+        .hover_orange {
+            background-color: orange;
+            transition: all 0.5s;
+        }
+
+        .hover_orange:hover {
+            background-color: rgb(255, 200, 97);
+            transition: all 0.5s;
+        }
+
+        #row_2 {
+            border-radius: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #row_2 input {
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            font-weight: bolder;
+            text-align: right;
+            box-sizing: border-box;
+            padding-right: 30px;
+            border-style: none;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px 5px rgba(0, 0, 0, 0.384) inset;
+        }
+
+        #row_2 input:focus {
+            outline: none;
+        }
+
+        #row_1 {
+            height: 30px;
+            padding-left: 10px;
+        }
+
+        #row_1 button {
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+        }
+
+        #close {
+            background-color: rgb(255, 46, 46);
+        }
+
+        #close:hover {
+            background-color: rgb(253, 100, 100);
+        }
+
+        #small {
+            background-color: yellow;
+        }
+
+        #small:hover {
+            background-color: rgb(253, 253, 157);
+        }
+
+        #full_screen {
+            background-color: chartreuse;
+        }
+
+        #full_screen:hover {
+            background-color: rgb(173, 255, 91);
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <br>
+        <table>
+            <tr>
+                <td colspan="4" id="row_1">
+                    <button id="close"></button>
+                    <button id="small"></button>
+                    <button id="full_screen"></button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" id="row_2">
+                    <input type="text" value="" id="input">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="clean()" style="border-top-left-radius: 20px;">AC</button>
+                </td>
+                <td>
+                    <button onclick="PN()">+/-</button>
+                </td>
+                <td>
+                    <button onclick="nums('%')">%</button>
+                </td>
+                <td>
+                    <button onclick="clickSymbol('/')" class="hover_orange">&divide;</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="nums('7')" value="7" class="number">7</button>
+                </td>
+                <td>
+                    <button onclick="nums('8')" value="8" class="number">8</button>
+                </td>
+                <td>
+                    <button onclick="nums('9')" value="9" class="number">9</button>
+                </td>
+                <td>
+                    <button onclick="clickSymbol('*')" class="hover_orange">&times;</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="nums('4')" value="4" class="number">4</button>
+                </td>
+                <td>
+                    <button onclick="nums('5')" value="5" class="number">5</button>
+                </td>
+                <td>
+                    <button onclick="nums('6')" value="6" class="number">6</button>
+                </td>
+                <td>
+                    <button onclick="clickSymbol('-')" class="hover_orange">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="nums('1')" value="1" class="number">1</button>
+                </td>
+                <td>
+                    <button onclick="nums('2')" value="2" class="number">2</button>
+                </td>
+                <td>
+                    <button onclick="nums('3')" value="3" class="number">3</button>
+                </td>
+                <td>
+                    <button onclick="clickSymbol('+')" class="hover_orange">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="nums('0')" value="0" class="number"
+                        style="border-bottom-left-radius: 20px;">0</button>
+                </td>
+                <td>
+                    <button onclick="del()">删除</button>
+                </td>
+                <td>
+                    <button onclick="clickPoint()">.</button>
+                </td>
+                <td>
+                    <button onclick="calculate()" class="hover_orange">=</button>
+                </td>
+            </tr>
+        </table>
+    <script>
+        //运算符开关变量
+        var canSymble = false;
+        //小数点开关变量
+        var canPoint = true;
+        //正负功能开关
+        var canPN = true;
+        //数字输入功能
+        function nums(num) {
+            var input = document.getElementById('input');
+            input.value += num;
+            canSymble = true;
+        }
+        //计算功能
+        function calculate() {
+            var input = document.getElementById('input');
+            var text = input.value;
+            input.value = eval(text);
+        }
+        //归零功能
+        function clean() {
+            var input = document.getElementById('input');
+            input.value = "";
+        }
+        //退格功能
+        function del() {
+            var input = document.getElementById('input');
+            var text = input.value;
+            var str = text.substr(0, text.length - 1);
+            input.value = str;
+            canSymble = true;
+        }
+        //正负功能
+        function PN() {
+            if (canPN) {
+                var input = document.getElementById('input');
+                var text = "-" + input.value;
+                input.value = text;
+                canPN = false;
+            } else {
+                var input = document.getElementById('input');
+                var text = input.value;
+                var str = text.substr(1);
+                input.value = str;
+                canPN = true;
+            }
+
+        }
+        //符号输入功能
+        function clickSymbol(symble) {
+            if (canSymble) {
+                input.value += symble;
+                canPoint = true;
+                canSymble = false;
+            }
+
+        }
+        //小数点输入功能
+        function clickPoint() {
+            if (canPoint) {
+                input.value += ".";
+                canPoint = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

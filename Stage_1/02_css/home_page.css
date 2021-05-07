@@ -130,6 +130,11 @@ main .main_item2 .container .row .col-xl-3 {
   font-size: 12px;
 }
 
+main .main_item2 .container .row .col-xl-3 img:hover {
+  -webkit-box-shadow: 0px 0px 5px 5px #d6d6d6;
+          box-shadow: 0px 0px 5px 5px #d6d6d6;
+}
+
 main .main_item2 .container .row .col-xl-3 p:nth-child(2) {
   line-height: 30px;
   margin-bottom: 0px;

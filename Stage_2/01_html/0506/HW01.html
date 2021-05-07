@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //api排序
+        merge1([1, 2, 3, 6], [2, 3, 4, 5]);
+        function merge1(nums1, nums2) {
+            var newArr = nums1.concat(nums2);
+            newArr.sort((x, y) => x - y);
+            nums1 = newArr;
+            alert(newArr);
+        }
+
+
+        //冒泡排序
+        merge2([1, 2, 3, 6], [2, 3, 4, 5]);
+        function merge2(nums1, nums2) {
+            var newArr = nums1.concat(nums2);
+            for (let j = 0; j < newArr.length - 1; j++) {
+                for (let i = 0; i < newArr.length - 1 - j; i++) {
+                    if (newArr[i] > newArr[i + 1]) {
+                        var temp = newArr[i];
+                        newArr[i] = newArr[i + 1];
+                        newArr[i + 1] = temp;
+                    }
+                }
+            }
+            alert(newArr);
+        }
+
+
+        //双指针排序
+        merge3([1, 2, 3, 6], [2, 3, 4, 5]);
+        function merge3(nums1, nums2) {
+            let i = 0;
+            let j = 0;
+            let newArr = [];
+            while (i < nums1.length && j < nums2.length) {
+                if (nums1[i] < nums2[j]) {
+                    newArr.push(nums1[i]);
+                    i++;
+                } else {
+                    newArr.push(nums2[j]);
+                    j++;
+                }
+            }
+            if (i <= nums1.length) {
+                for (; i < nums1.length; i++) {
+                    newArr.push(nums1[i]);
+                }
+            } else {
+                for (; j < nums2.length; j++) {
+                    newArr.push(nums1[j]);
+                }
+            }
+            alert(newArr);
+        }
+
+    </script>
+</body>
+
+</html>

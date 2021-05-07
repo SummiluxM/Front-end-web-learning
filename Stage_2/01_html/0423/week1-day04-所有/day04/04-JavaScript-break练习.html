@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1. 用户登录：用户有3次机会登录，中间某一次输入成功，提示成功后终止程序。
+         或3次都输错，也终止程序  break
+         */
+    //   for(var i=1;i<=3;i++){
+    //     var userinput = prompt('请输入用户名');
+    //     var userpass = prompt('请输入密码');
+
+    //     if(userinput=="admin" && userpass=="ad123"){
+    //         alert("登录成功");
+    //         break;
+    //     }else{
+    //         alert("登录失败");
+    //     }
+    //   }
+
+
+        /*
+
+      2. 利用 while  switch break 实现登录注册功能
+         要求：1. 用户通过输入不同的数字有不同的功能-一级菜单。
+             1. 登录  2. 注册  3.退出
+             2. 没有默认用户，需要实现用户注册后可以使用该账号进行登录
+             3. 注册的用户需包含用户名和密码，保存到不同的变量中
+             4. 实现二级菜单，并实现对应的功能
+                当用户登录后，才会显示二级菜单：1. 查询余额 2. 取钱 3. 存钱 4. 修改密码 5. 返回一级菜单
+                
+
+      */
+
+      // 1. 用户输入
+      // 2. 用switch进行判断。对应case中书写功能代码 。
+      // 3. 用户输入以及switch代码用循环包围，实现多次的登录或注册
+      // 4.只要输入3才会退出程序
+      //保存注册的用户
+      var username;
+      var userpass;
+      var isrun = true;//为true表示循环继续
+      while(isrun==true){
+          var input = prompt('1. 登录  2. 注册  3.退出 ');
+          switch (input) {
+            case "1"://登录
+                var logininput = prompt('请输入登录用户名');
+                var loginpass= prompt('请输入登录密码');
+                //判断
+                if(logininput==username &&loginpass==userpass){
+                    alert("登录成功");
+                    //二级菜单switch
+                    // var isrun2 =true;
+                    // while(isrun2){
+                    //     var 
+                    //     switch (key) {
+                    //         case value:
+                                
+                    //             break;
+                        
+                    //         default:
+                    //             break;
+                    //     }
+                    // }
+                }else{
+                    alert("用户名或密码错误");
+                }
+            break;
+            case "2"://注册
+                username = prompt('请输入注册用户名');
+                userpass= prompt('请输入注册密码');
+                alert("注册成功");
+            break;
+            case "3"://退出，结束循环
+                isrun=false;
+                alert("感谢使用，祝您生活愉快!~")
+            break;
+            default:document.write('输入不合法');break;
+          }
+      }
+      
+    </script>
+  </body>
+</html>

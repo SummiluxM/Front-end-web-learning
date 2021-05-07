@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //超市系统全局变量
+        var user_bank = [
+            ["aaa", "111"], ["bbb", "222"], ["ccc", "333"]
+        ];
+        var admin = [
+            ["000", "000"]
+        ];
+        var goods = [
+            ["1", '卫龙辣条0', 100, 10, '好吃又不贵', 0],
+            ["2", '卫龙辣条1', 200, 11, '好吃又不贵', 1],
+            ["3", '卫龙辣条2', 300, 12, '好吃又不贵', 2]
+        ];
+        var shopcar = [
+        ];
+        //主结构
+        body();
+        function body() {
+            var counter = 0;
+            var main_key;
+            while (counter == 0) {
+                main_key = Number(prompt('请输入控制代号1.登录2.管理员登录3.退出'));
+                switch (main_key) {
+                    case 1:
+                        var log_ctrl = logIn(prompt("请输入用户名"));
+                        if (log_ctrl == 1) {
+                            alert('登录成功');
+                            second_menu()
+                        } else {
+                            alert('登录失败');
+                        }
+                        break;
+                    case 2:
+                        var admin_ctrl = admin_logIn(prompt("请输入管理员"));
+                        if (admin_ctrl == 1) {
+                            alert('登录成功');
+                            admin_menu()
+                        } else {
+                            alert('登录失败');
+                        }
+                        break;
+                    case 3:
+                        counter++;
+                        alert('退出成功');
+                        break;
+                }
+            }
+        }
+        function second_menu() {
+            var second_key,
+                second_count = 0;
+            while (second_count == 0) {
+                second_key = Number(prompt('请输入控制代号1.查看所有商品2.添加商品到购物车3.查看购物车4.结账5.返回上一级'));
+                switch (second_key) {
+                    case 1:
+                        watchGoods()
+                        break;
+                    case 2:
+                        add_shopcar()
+                        break;
+                    case 3:
+                        alert(shopcar.join("\n"))
+                        break;
+                    case 4:
+                        check_out(Number(prompt('请付款')))
+                        break;
+                    case 5:
+                        second_count++;
+                        alert('退出成功');
+                        break;
+                }
+            }
+        }
+        function admin_menu() {
+            var admin_key,
+                admin_count = 0;
+            while (admin_count == 0) {
+                admin_key = Number(prompt('请输入控制代号1.查看所有商品(按销量排序)2.添加商品3.修改商品4.删除商品5.返回上一级'));
+                switch (admin_key) {
+                    case 1:
+                        admin_watch()
+                        break;
+                    case 2:
+                        admin_add();
+                        break;
+                    case 3:
+                        admin_edit()
+                        break;
+                    case 4:
+                        admin_del()
+                        break;
+                    case 5:
+                        admin_count++;
+                        alert('退出成功');
+                        break;
+                }
+            }
+        }
+        //登录功能
+        //用户登录
+        function logIn(username) {
+            var count = 0;
+            for (var i = 1; i <= 3; i++) {
+                for (var j = 0; j < user_bank.length; j++) {
+                    if (username == user_bank[j][0]) {
+                        count = 1;
+                        alert("用户名正确");
+                        var match = j;
+                        j = user_bank.length;
+                        i = i + 3;
+                        for (var m = 1; m <= 3; m++) {
+                            var password = prompt("请输入密码");
+                            if (password == user_bank[match][1]) {
+                                alert("密码正确");
+                                m = m + 3;
+                                return 1;
+                            } else {
+                                alert("密码错误");
+                                return 0;
+                            }
+                        }
+                    }
+                }
+                if (count == 0) {
+                    alert("无此用户");
+                    return 0;
+                }
+            }
+        }
+        //管理员登录
+        function admin_logIn(adminname) {
+            var count = 0;
+            for (var i = 1; i <= 3; i++) {
+                for (var j = 0; j < admin.length; j++) {
+                    if (adminname == admin[j][0]) {
+                        count = 1;
+                        alert("管理员正确");
+                        var match = j;
+                        j = admin.length;
+                        i = i + 3;
+                        for (var m = 1; m <= 3; m++) {
+                            var password = prompt("管理员密码");
+                            if (password == admin[match][1]) {
+                                alert("密码正确");
+                                m = m + 3;
+                                return 1;
+                            } else {
+                                alert("密码错误");
+                                return 0;
+                            }
+                        }
+                    }
+                }
+                if (count == 0) {
+                    alert("无此用户");
+                    return 0;
+                }
+            }
+        }
+        //查看商品
+        function watchGoods() {
+            alert(goods.join("\n"))
+        }
+        //管理员查看商品
+        function ascend(x, y) {
+            return y[5] - x[5];  //按照数组的第4个值升序排列
+        }
+        function admin_watch() {
+            var goods_copy = goods
+            goods_copy.sort(ascend);
+            alert(goods_copy.join("\n"));
+        }
+
+        //添加购物车
+        function add_shopcar() {
+            var goods_item = prompt('输入商品编号');
+            var goods_number = Number(prompt('输入商品数量'));
+            for (i = 0; i < goods.length; i++) {
+                if (goods[i][0] == goods_item) {
+                    shopcar.push([goods[i][1], goods_number, goods_number * goods[i][3]]);
+                    alert('添加成功');
+                    return 1;
+                } else if (i == goods.length - 1) {
+                    alert('添加失败');
+                    return 0;
+                }
+            }
+        }
+        //结算
+        function check_out(money) {
+            var check_out_count;
+            let price = 0;
+            for (i = 0; i < shopcar.length; i++) {
+                price += shopcar[i][2];
+            }
+            if (money < price) {
+                alert("钱不够");
+            } else {
+                var back_money = money - price;
+                alert(`支付成功，找零${back_money}`);
+                for (i = 0; i < goods.length; i++) {
+                    for (j = 0; j < shopcar.length; j++) {
+                        if (goods[i][1] == shopcar[j][0]) {
+                            goods[i][2]--;
+                            goods[i][5]++;
+                        }
+                    }
+
+                }
+                shopcar = [];
+                check_out_count++;
+            }
+        }
+        //管理员添加商品
+        function admin_add() {
+            let
+                goods_item01 = prompt('商品编号'),
+                goods_item02 = prompt('商品名称'),
+                goods_item03 = Number(prompt('商品库存')),
+                goods_item04 = Number(prompt('商品价格')),
+                goods_item05 = prompt('商品描述');
+            
+            goods.push([goods_item01, goods_item02, goods_item03, goods_item04, goods_item05, 0]);
+        }
+        //管理员修改商品
+        function admin_edit() {
+            var goods_item = prompt('输入商品编号')
+            var goods_item_keys;
+            for (i = 0; i < goods.length; i++) {
+                if (goods[i][0] == goods_item) {
+                    goods_item_keys = Number(prompt('请输入控制代号1.修改商品代号2.修改商品名称3.修改商品库存4.修改商品价格5.修改商品描述'))
+                    switch (goods_item_keys) {
+                        case 1:
+                            goods[i][0] = prompt('商品编号');
+                            break;
+                        case 2:
+                            goods[i][1] = prompt('商品名称');
+                            break;
+                        case 3:
+                            goods[i][2] = Number(prompt('商品库存'));
+                            break;
+                        case 4:
+                            goods[i][3] = Number(prompt('商品价格'));
+                            break;
+                        case 5:
+                            goods[i][4] = prompt('商品描述');
+                            break;
+                    }
+                    alert('修改成功');
+                    return 1;
+                } else if (i == goods.length - 1) {
+                    alert('无此商品');
+                    return 0;
+                }
+            }
+        }
+        //管理员删除商品
+        function admin_del() {
+            let
+                index = Number(prompt('商品编号')) - 1,
+                temp = goods[index];
+            if (index < goods.length) {
+                for (var i = index; i < goods.length - 1; i++) {
+                    goods[i] = goods[i + 1];
+                }
+                goods[i] = temp;
+                goods.pop();
+            } else {
+                alert("无此商品")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
