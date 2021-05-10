@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url("bg.png") no-repeat;
+            background-position: center;
+        }
+        body,html{
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        document.body.addEventListener('mousemove',function(e) {
+            let x=e.clientX;
+            let y=e.clientY;
+            x-=1920/2;
+            x/=100;
+            y-=1000/2;
+            y/=50;
+            this.style.backgroundPosition=`${50+x}% ${50+y}%`
+        });
+    </script>
+</body>
+</html>

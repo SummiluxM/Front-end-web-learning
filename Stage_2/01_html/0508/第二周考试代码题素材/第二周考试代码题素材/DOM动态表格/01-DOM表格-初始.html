@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="changesex()">性别切换</button>
+    <button onclick="zebraColor()">斑马线-天空蓝(skyblue)</button>
+    <button onclick="add_head()">开头添加一行(复制第一行)</button>
+    <button onclick="add_foot()">末尾添加一行(复制最后一行)</button>
+    <button onclick="del_head()">删除第一行数据</button>
+    <button onclick="del_foot()">删除最后一行</button>
+    <button onclick="del_all()">删除所有数据行，只保留标题行</button>
+    <button onclick="del_man()">删除所有男生</button>
+    <button onclick="del_woman()">删除所有女生</button>
+    <button onclick="name_bolder()">名字加粗</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name">周星星</td>
+                <td>23</td>
+                <td class="sex">男</td>
+
+            </tr>
+            <tr>
+                <td class="name">达叔</td>
+                <td>34</td>
+                <td class="sex">男</td>
+
+            </tr>
+            <tr>
+                <td class="name">总警司</td>
+                <td>35</td>
+                <td class="sex">女</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var table = document.querySelector('table');
+        var tbody = document.querySelector('tbody');
+        var tr = document.querySelectorAll('tbody tr');
+
+        function changesex() {
+            let sex = document.querySelectorAll('.sex');
+            for (let i = 0; i < sex.length; i++) {
+                if (sex[i].innerText == '男') {
+                    sex[i].innerText = '女';
+                } else {
+                    sex[i].innerText = '男';
+                }
+            }
+        }
+        function zebraColor() {
+            let zebra = document.querySelectorAll('table tbody tr:nth-child(2n+1)');
+            for (let i = 0; i < zebra.length; i++) {
+                zebra[i].style.backgroundColor = `skyblue`;
+            }
+        }
+        function clear_zebra() {
+            let tr = document.querySelectorAll('table tbody tr');
+            for (let i = 0; i < tr.length; i++) {
+                tr[i].setAttribute('style', 'background-color: white');
+            }
+        }
+        function add_head() {
+            let tr = document.querySelectorAll('table tbody tr');
+            let
+                name = document.querySelector('table tbody tr td:nth-child(1)').innerText,
+                age = document.querySelector('table tbody tr td:nth-child(2)').innerText,
+                sex = document.querySelector('table tbody tr td:nth-child(3)').innerText;
+            new_tr = document.createElement('tr');
+            clear_zebra();
+            new_tr.innerHTML = `
+                <td>${name}</td>
+                <td>${age}</td>
+                <td>${sex}</td>
+            `;
+            tbody.insertBefore(new_tr, tr[0]);
+            zebraColor()
+        }
+        function add_foot() {
+
+            let
+                name = document.querySelector('table tbody tr:last-child td:nth-child(1)').innerText,
+                age = document.querySelector('table tbody tr:last-child td:nth-child(2)').innerText,
+                sex = document.querySelector('table tbody tr:last-child td:nth-child(3)').innerText;
+            new_tr = document.createElement('tr');
+            clear_zebra();
+            new_tr.innerHTML = `
+                <td>${name}</td>
+                <td>${age}</td>
+                <td>${sex}</td>
+            `;
+            tbody.appendChild(new_tr);
+            ZebraColor();
+        }
+        function del_foot() {
+            var trs = document.querySelectorAll('table tbody tr');
+            clear_zebra();
+            tbody.removeChild(trs[trs.length - 1]);
+            ZebraColor();
+        }
+        function del_head() {
+            var trs = document.querySelectorAll('table tbody tr');
+            clear_zebra();
+            tbody.removeChild(trs[0]);
+            ZebraColor();
+        }
+        function del_all() {
+            var trs = document.querySelectorAll('table tbody tr');
+            for (let i = 0; i < trs.length; i++) {
+                tbody.removeChild(trs[i]);
+            }
+        }
+        function del_man() {
+            let sex = document.querySelectorAll('.sex');
+            for (let i = 0; i < sex.length; i++) {
+                if (sex[i].innerText == '男') {
+                    let tr=sex[i].parentElement
+                    clear_zebra();
+                    tbody.removeChild(tr);
+                }
+            }
+            ZebraColor();
+        }
+        function del_woman() {
+            let sex = document.querySelectorAll('.sex');
+            for (let i = 0; i < sex.length; i++) {
+                if (sex[i].innerText == '女') {
+                    let tr=sex[i].parentElement
+                    clear_zebra();
+                    tbody.removeChild(tr);
+                }
+            }
+            ZebraColor();
+        }
+        function name_bolder() {
+            let name = document.querySelectorAll('.name');
+            for (let i = 0; i < name.length; i++) {
+                name[i].style.fontWeight = `bolder`;
+            }
+        }
+    </script>
+</body>
+
+</html>

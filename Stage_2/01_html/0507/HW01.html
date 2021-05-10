@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            background-color: white;
+        }
+
+        #div1 {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        #div2 {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        #div3 {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        #div4 {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        #div5 {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+            <div id="div3">
+                div3
+                <div id="div4">
+                    div4
+                    <div id="div5">
+                        div5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // for (let i=1;i<=5;i++) {
+        //     let divs=document.querySelector(`#div${i}`);
+        //     let time=0;
+        //     divs.addEventListener('click',function(event) {
+        //         if (event.target==this) {
+        //             time=0;
+        //         } else {
+        //             time++;
+        //         }
+        //         let timer =setTimeout(function() {
+        //             clear();
+        //             let
+        //                 r = Math.floor(Math.random() * 255),
+        //                 g = Math.floor(Math.random() * 255),
+        //                 b = Math.floor(Math.random() * 255),
+        //                 a = Math.random();
+        //             divs.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+        //         },`${6-i}000`);
+        //     });
+        // }
+
+        var time = 0;
+        var div1 = document.querySelector('#div1');
+        var div2 = document.querySelector('#div2');
+        var div3 = document.querySelector('#div3');
+        var div4 = document.querySelector('#div4');
+        var div5 = document.querySelector('#div5');
+        div5.addEventListener('click', function (event) {
+            let
+                r = Math.floor(Math.random() * 255),
+                g = Math.floor(Math.random() * 255),
+                b = Math.floor(Math.random() * 255),
+                a = Math.random();
+            div5.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+        });
+        div4.addEventListener('click', function (event) {
+            if (event.target == this) {
+                time = 0;
+            } else {
+                time++;
+            }
+            setTimeout(function () {
+                clear();
+                let
+                    r = Math.floor(Math.random() * 255),
+                    g = Math.floor(Math.random() * 255),
+                    b = Math.floor(Math.random() * 255),
+                    a = Math.random();
+                div4.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+            }, time * 1000);
+        });
+        div3.addEventListener('click', function (event) {
+            if (event.target == this) {
+                time = 0;
+            } else {
+                time++;
+            }
+            setTimeout(function () {
+                clear();
+                let
+                    r = Math.floor(Math.random() * 255),
+                    g = Math.floor(Math.random() * 255),
+                    b = Math.floor(Math.random() * 255),
+                    a = Math.random();
+                div3.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+            }, time * 1000);
+        });
+        div2.addEventListener('click', function (event) {
+            if (event.target == this) {
+                time = 0;
+            } else {
+                time++;
+            }
+            setTimeout(function () {
+                clear();
+                let
+                    r = Math.floor(Math.random() * 255),
+                    g = Math.floor(Math.random() * 255),
+                    b = Math.floor(Math.random() * 255),
+                    a = Math.random();
+                div2.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+            }, time * 1000);
+        });
+        div1.addEventListener('click', function (event) {
+            if (event.target == this) {
+                time = 0;
+            } else {
+                time++;
+            }
+            setTimeout(function () {
+                clear();
+                let
+                    r = Math.floor(Math.random() * 255),
+                    g = Math.floor(Math.random() * 255),
+                    b = Math.floor(Math.random() * 255),
+                    a = Math.random();
+                div1.style.backgroundColor = `rgba(${r},${g},${b},${a})`;
+            }, time * 1000);
+        });
+        function clear() {
+            let divs = document.querySelectorAll('div')
+            for (i = 0; i < divs.length; i++) {
+                divs[i].style.backgroundColor = `white`;
+            }
+        }
+    </script>
+</body>
+
+</html>

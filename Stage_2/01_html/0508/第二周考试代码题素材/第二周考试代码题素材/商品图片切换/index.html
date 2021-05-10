@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        #box img {
+            width: 100%;
+        }
+
+        #box .opacity {
+            animation: opacity 2s alternate;
+        }
+
+        @keyframes opacity {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        #big {
+            background: url("img/id1.jpg") no-repeat;
+            width: 300px;
+            height: 300px;
+            /* position: absolute;
+            right: -300px;
+            top: 0px; */
+            display: inline-block;
+            transition: opacity 0.3s;
+            opacity: 0;
+            background-size: 200%;
+            background-position: 0px 0px;
+        }
+
+        #grass {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(216, 165, 24, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            font-size: 30px;
+            line-height: 150px;
+            text-align: center;
+            color: #666666;
+
+        }
+
+        .active {
+            border: 2px solid orange;
+        }
+
+        #imglist {
+            width: 300px;
+            height: 60px;
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+        }
+
+        #imglist li {
+            width: 60px;
+            height: 100%;
+            box-sizing: border-box;
+            transition: all 0.5s;
+            outline: none;
+
+        }
+
+        #imglist li img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+        <img src="img/id1.jpg" alt="" id="img">
+
+    </div>
+    <div id="big"></div>
+    <!-- 图片列表 -->
+    <ul id="imglist">
+        <li class="item"><img src="img/id1.jpg" alt="" onclick="change(1)"></li>
+        <li class="item"><img src="img/id2.jpg" alt="" onclick="change(2)"></li>
+        <li class="item"><img src="img/id3.jpg" alt="" onclick="change(3)"></li>
+        <li class="item"><img src="img/id4.jpg" alt="" onclick="change(4)"></li>
+        <li class="item"><img src="img/id5.jpg" alt="" onclick="change(5)"></li>
+    </ul>
+    <script>
+        let imgs = document.querySelectorAll('.item img');
+        let img = document.querySelector('#img');
+        let x = [];
+        for (let j = 0; j < imgs.length; j++) {
+            x.push(0);
+        }
+        function change(num) {
+            for (let i = 0; i < imgs.length; i++) {
+                imgs[i].setAttribute('class', 'item');
+                // img.setAttribute('class','');
+            }
+            // let newimg=document.createElement('img');
+            // newimg.setAttribute('src', `img/id${num}.jpg`);
+            // img.replaceWith(newimg);
+            img.setAttribute('src', `img/id${num}.jpg`);
+            img.style.opacity = 0;
+
+            // console.log(x[num - 1])
+            let timer = setInterval(function () {
+                x[num - 1]++;
+                img.style.opacity = x[num - 1] / 100;
+                console.log(`第${num}个时间参数：`+x[num-1]);
+                if (x[num - 1] == 100) {
+                    x[num-1]=0;
+                    clearInterval(timer);
+                }
+            }, 20);
+            // img.setAttribute('class','opacity');
+            imgs[num - 1].setAttribute('class', 'item active');
+        }
+    </script>
+</body>
+
+</html>

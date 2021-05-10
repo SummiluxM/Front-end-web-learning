@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = prompt("请输入一个字符");
+        var number = 0,
+            little = 0,
+            big = 0,
+            other = 0;
+        judge(str);
+        function judge(str_in) {
+            for (i = 0; i < str.length; i++) {
+                let str = str_in.charCodeAt(i);
+                if (str >= 48 && str <= 57) {
+                    number++;
+                } else if (str >= 97 && str <= 122) {
+                    little++;
+                } else if (str >= 65 && str <= 90) {
+                    big++;
+                }
+                other = str.length - number - little - big;
+            }
+            alert(`字符中有数字${number}小写字母${little}大写字母${big}其他符号${other}个`);
+        }
+    </script>
+</body>
+
+</html>

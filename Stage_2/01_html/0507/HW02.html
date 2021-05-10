@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //力扣题：给定一个未经排序的整数数组，找到最长且 连续增长的子序列，并返回该序列的长度。比如 [2,3,2,4,5,6,3]  中符合条件的是[4,5,6],程序返回3
+        /**
+         * @param {number[]} nums
+         * @return {number}
+         */
+        var findLengthOfLCIS = function (nums) {
+            let start_num = 0,
+                num = 0;
+            for (i = 0; i < nums.length; i++) {
+                if (i > 0 && nums[i] <= nums[i - 1]) {
+                    start_num = i;
+                }
+                num = Math.max(num, i - start_num + 1);
+            }
+            return num;
+        };
+    </script>
+</body>
+
+</html>

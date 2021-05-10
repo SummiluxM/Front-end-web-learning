@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组动态和问题
+        var runningSum = function (nums) {
+            for (let i = 1; i < nums.length; i++) {
+                nums[i] += nums[i - 1];
+            }
+            return nums;
+        };
+
+
+
+
+        
+        //早餐组合
+        //case1
+        //双循环穷举
+        var breakfastNumber = function (staple, drinks, x) {
+            let count = 0;
+            for (let i = 0; i < staple.length; i++) {
+                for (let j = 0; j < drinks.length; j++) {
+                    if (staple[i] + drinks[j] <= x) {
+                        count++;
+                    }
+                }
+            }
+            return count % 1000000007;
+        };
+        //case2
+        //先排序，再从两头夹逼
+        var breakfastNumber = function (staple, drinks, x) {
+            let count = 0;
+            staple.sort(function (x, y) {
+                return x - y;
+            });
+            drinks.sort(function (x, y) {
+                return x - y;
+            });
+            let i = 0;
+            let j = drinks.length - 1;
+            while (i < staple.length && j >= 0) {
+                if (staple[i] + drinks[j] <= x) {
+                    count += j + 1;
+                    i++;
+                } else {
+                    j--;
+                }
+            }
+            return count % 1000000007;
+        };
+    </script>
+</body>
+
+</html>
