@@ -71,9 +71,7 @@
         let btn_left = document.querySelector('#btn_left');
         let btn_right = document.querySelector('#btn_right');
         let img_number = 0;
-        let new_left = 0;
         let timer;
-        let slide;
         btn_left.addEventListener('click', left);
         btn_right.addEventListener('click', right);
         function move(num) {
@@ -99,12 +97,12 @@
             }
             move();
         }
-        timer = setInterval(right, 5000);
+        timer = setInterval(right, 3000);
         box.addEventListener('mouseover', function () {
             clearInterval(timer);
         });
         box.addEventListener('mouseout', function () {
-            timer = setInterval(right, 5000);
+            timer = setInterval(right, 3000);
         });
     </script>
 </body>

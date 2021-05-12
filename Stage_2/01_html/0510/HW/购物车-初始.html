@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    img {
+      width: 100px;
+    }
+
+    input {
+      width: 30px;
+    }
+
+    td {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="menu">
+    <button>添加商品至首位</button>
+    <button>添加商品至末尾</button>
+    <button>删除第一个商品</button>
+    <button>删除最后一个商品</button>
+  </div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>图片</th>
+        <th>单价</th>
+        <th>操作</th>
+        <th>总价</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" class="checkbox">卫龙辣条1</td>
+        <td><img src="img/id1.jpg" alt="" /></td>
+        <td class="price">3.5</td>
+        <td>
+          <button class="minus">-</button>
+          <input type="text" value="0" />
+          <button class="plus">+</button>
+          <button class="del">删除</button>
+        </td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkbox">卫龙辣条2</td>
+        <td><img src="img/id2.jpg" alt="" /></td>
+        <td class="price">4</td>
+        <td>
+          <button class="minus">-</button>
+          <input type="text" value="0" />
+          <button class="plus">+</button>
+          <button class="del">删除</button>
+        </td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkbox">卫龙辣条3</td>
+        <td><img src="img/id3.jpg" alt="" /></td>
+        <td class="price">5</td>
+        <td>
+          <button class="minus">-</button>
+          <input type="text" value="0" />
+          <button class="plus">+</button>
+          <button class="del">删除</button>
+        </td>
+        <td>0</td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <!-- 总价格 -->
+      <tr>
+        <td><input type="checkbox" id="checkbox_all">全选</td>
+        <td colspan="5" id="all_money">0</td>
+      </tr>
+    </tfoot>
+  </table>
+  <script src="../../jQuery/jquery-3.5.1.min.js"></script>
+  <script>
+    let newTr;
+    $('#menu').on('click', 'button:first-child', function (e) {
+      let name = prompt('商品名称');
+      let photo_num = Number(prompt('商品图片编号1-8'));
+      let price = Number(prompt('商品单价'));
+      newTr = `
+      <tr>
+        <td><input type="checkbox" class="checkbox">${name}</td>
+        <td><img src="img/id${photo_num}.jpg"/></td>
+        <td class="price">${price}</td>
+        <td>
+          <button class="minus">-</button>
+          <input type="text" value="0" />
+          <button class="plus">+</button>
+          <button class="del">删除</button>
+        </td>
+        <td>0</td>
+      </tr>
+      `;
+      $('tbody tr:first-child').before(newTr);
+    });
+    $('#menu').on('click', 'button:nth-child(2)', function (e) {
+      let name = prompt('商品名称');
+      let photo_num = Number(prompt('商品图片编号1-8'));
+      let price = Number(prompt('商品单价'));
+      newTr = `
+      <tr>
+        <td><input type="checkbox" class="checkbox">${name}</td>
+        <td><img src="img/id${photo_num}.jpg"/></td>
+        <td class="price">${price}</td>
+        <td>
+          <button class="minus">-</button>
+          <input type="text" value="0" />
+          <button class="plus">+</button>
+          <button class="del">删除</button>
+        </td>
+        <td>0</td>
+      </tr>
+      `;
+      $('tbody').append(newTr);
+    });
+    $('#menu').on('click', 'button:nth-child(3)', function (e) {
+      $('tbody tr:first-child').remove();
+    });
+    $('#menu').on('click', 'button:nth-child(4)', function (e) {
+      $('tbody tr:last-child').remove();
+    });
+    //删除功能
+    $('tbody').on('click', '.del', function (e) {
+      let $elem = $(this);
+      $elem.parent().parent().remove();
+    });
+    //减号功能
+    $('tbody').on('click', '.minus', function (e) {
+      let $elem = $(this).next();
+      let number = Number($elem.val());
+      if (number <= 0) {
+        $elem.val(0);
+      } else {
+        $elem.val(number - 1);
+      }
+      getOneGoodMoney($elem);
+      allGoodsTotalMoney();
+    });
+    //加号功能
+    $('tbody').on('click', '.plus', function (e) {
+      let $elem = $(this).prev();
+      let number = Number($elem.val());
+      $elem.val(number + 1);
+      getOneGoodMoney($elem);
+      allGoodsTotalMoney();
+    });
+    //计算单个商品的总价
+    function getOneGoodMoney(input) {
+      //单价 * 数量
+      //数量
+      let $count = input.val();
+      // 单价,input 的父标签(td)的上一个兄弟标签(td)
+      var $price = input.parent().prev().text();
+      var total = Number($count) * Number($price);
+      // 把总价赋给input的父标签的下一个兄弟标签
+      input.parent().next().text(total);
+    }
+
+    //总价：获取tbody中的每一行的最后一个td，获取td的内容完成累加操作。
+
+    function allGoodsTotalMoney() {
+      var $money = $('tbody tr td:nth-child(5)');
+      var sum = 0;//总价格
+      for (var i = 0; i < $money.length; i++) {
+        let every_money = Number($money.eq(i).text());
+        let $checkbox = $('.checkbox');
+        if ($checkbox.prop('checked')) {
+          //累加
+          sum += every_money;
+        }
+      }
+      // 累加结束,放入总价格中,找到最后一个tr的td
+      $('#all_money').text(sum);
+    }
+    $('tfoot').on('click', '#checkbox_all', function (e) {
+      let $all_choose = $('#checkbox_all');
+      let $checkbox = $('.checkbox');
+      if ($all_choose.prop('checked')==true) {
+        for (var i = 0; i < $checkbox.length; i++) {
+          let every_check = $checkbox.eq(i);
+          every_check.prop('checked', true);
+        }
+      } else if ($all_choose.prop('checked')==false) {
+        for (var i = 0; i < $checkbox.length; i++) {
+          let every_check = $checkbox.eq(i);
+          every_check.prop('checked',false);
+        }
+      }
+      allGoodsTotalMoney();
+    });
+
+  </script>
+</body>
+
+</html>

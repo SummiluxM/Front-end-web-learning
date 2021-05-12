@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(./雪花素材/snow-night.jpg);
+            background-size: cover;
+        }
+
+        .active_snow {
+            transform: translateY(1500px);
+            transition: all 10s;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="snow">下雪</button>
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+    <button id="del">删除</button>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        var timer1, timer2, timer3;
+        $('body').on('click','#snow',function(e){
+            for (let i = 1; i < 80; i++) {
+                var top = Math.floor(Math.random() * 900);
+                var left = Math.floor(Math.random() * 1900);
+                var new_img=`
+                <img src="./雪花素材/snow-white.png" style="position: fixed;top:${top}px;left:${left}px"/>
+                `;
+                $('body').append(new_img);
+            }
+        });
+        $('body').on('click','#start',function(e){
+            timer2 = setInterval(
+                function () {
+                    var $imgs = $('img');
+                    for (let i = 0; i < $imgs.length; i++) {
+                        var $img = $imgs.eq(i);
+                        var old_top = $img.css('top');
+                        old_top = Number(old_top.substr(0, old_top.length - 2))
+                        if (old_top < 1000) {
+                            $img.css('top',`${old_top+1}px`);
+
+                        } else {
+                            $img.css('top',`-40px`);
+                        }
+                    }
+                }
+                , 5);
+        });
+        $('body').on('click','#stop',function(e){
+            clearInterval(timer2);
+        });
+        $('body').on('click','#del',function(e){
+            $('img').remove();
+        });
+    </script>
+</body>
+
+</html>

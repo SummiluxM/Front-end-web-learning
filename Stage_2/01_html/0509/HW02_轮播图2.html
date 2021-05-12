@@ -94,7 +94,7 @@
                         clearInterval(timer);
                         img_number--;
                     }
-                }, 10);
+                }, 1);
             } else {
                 can_left = true;
             }
@@ -118,19 +118,19 @@
                         img_number++;
 
                     }
-                }, 10);
+                }, 1);
             } else {
                 can_right = true;
             }
 
         }
 
-        let timer1 = setInterval(right, 5000);
+        let timer1 = setInterval(right, 3000);
         box.addEventListener('mouseover', function () {
             clearInterval(timer1);
         });
         box.addEventListener('mouseout', function () {
-            timer1 = setInterval(right, 5000);
+            timer1 = setInterval(right, 3000);
         });
     </script>
 </body>

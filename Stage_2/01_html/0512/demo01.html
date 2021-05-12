@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function replace(str) {
+            return str.replaceAll(' ','%20');
+        }
+        function analyze(str) {
+            let newArr=str.split('#');
+            newArr.pop();
+            return newArr
+        }
+        function firstAndLastIndex(str) {
+            let string=String(str);
+            let first=string.indexOf('那');
+            let last=string.lastIndexOf('那');
+            return first,last;
+        }
+        function endWithJava(str) {
+            let string=String(str);
+            return string.endWith('.java');
+        }
+        function pass(str) {
+            // let string=String(str);
+            // for (let i=0;i<string.length;i++) {
+            //     let num=(Number(string.charAt(i))+5)%10;
+            //     let num=String(num);
+            // }
+            // for(let j=num.length,j>=0;j--) {
+            //     let newStr=newStr.concat(num[j]);
+            // }
+            // return newStr;
+            
+        }
+        function demo07(str) {
+            return str.slice(0,str.length);
+        }
+        function demo08(str) {
+
+        }
+    </script>
+</body>
+</html>
