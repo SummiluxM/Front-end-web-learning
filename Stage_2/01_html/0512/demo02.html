@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function demo1() {
+            var pattern = /^[0-9]{5,10}$/,
+                str = '';
+            console.log(pattern.test(str));
+        }
+        function demo2() {
+            var pattern = /^1[3-9][0-9]{9}$/,
+                str = '';
+            console.log(pattern.test(str));
+        }
+        function demo3() {
+            var pattern = /^[a-zA-Z]([0-9]|[a-zA-Z]|[_])[@]([0-9]|[a-zA-Z]){2,3}[.](com|cn|net)$/,
+                str = '';
+            console.log(pattern.test(str));
+        }
+        /**
+        * 转换时间字符串为时间对象
+        * @function _str2time
+        * @param strTime {String} - e.g "2017-02-13 10:02:58" or "2017-02-13" or "9:10"
+        * @param type {String} - e.g date, dateTime, time
+        */
+        function _str2time(strTime, type) {
+            // 省略其它代码
+        }
+    </script>
+</body>
+
+</html>
