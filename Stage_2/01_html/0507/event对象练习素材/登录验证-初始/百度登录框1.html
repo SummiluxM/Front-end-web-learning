@@ -44,11 +44,11 @@
         密码： 6~16位，以大写开头
         如果用户输错，将提示写在对应的p标签中，给用户一个提示
         */
-        document.querySelector('button').addEventListener('click',function(e){
+        document.querySelector('button').addEventListener('click', function (e) {
             e.preventDefault();
         });
-        let nameright=0;
-        let passright=0;
+        let nameright = 0;
+        let passright = 0;
         function userCheck() {
             var input = document.querySelector("#user");
             var text = input.value;
@@ -58,7 +58,7 @@
             } else {
                 //正确 
                 document.querySelector('#user-msg').innerText = "";
-                nameright=1;
+                nameright = 1;
             }
         }
         function passCheck() {
@@ -74,7 +74,7 @@
             } else {
                 key = 3
                 input.nextElementSibling.innerText = '';
-                passright=1;
+                passright = 1;
             }
             switch (key) {
                 case 1: input.nextElementSibling.innerText = '首字母为大写';
@@ -95,9 +95,9 @@
                     break;
             }
         }
-        if (nameright==1&&passright==1) {
-            document.querySelector('button').addEventListener('click',function(e){
-                var form=document.querySelector('form');
+        if (nameright == 1 && passright == 1) {
+            document.querySelector('button').addEventListener('click', function (e) {
+                var form = document.querySelector('form');
                 form.submit();
             });
         }
