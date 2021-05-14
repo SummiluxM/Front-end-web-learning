@@ -1,0 +1,53 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-05-13 16:02:33
+ * @LastEditTime: 2021-05-13 16:40:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Web_learning\Stage_2\01_html\0513\原生对象\demo01.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let goods1 = {
+            name:"一",
+            price: 12,
+            storage: 1000,
+            sales: 20
+        }
+        let goods2 = {
+            name:"二",
+            price: 300,
+            storage: 100,
+            sales: 1
+        }
+        let goods3 = {
+            name:"三",
+            price: 120000,
+            storage: 100,
+            sales: 30
+        }
+        console.log(goods1,goods2,goods3);
+        goods1.price*=0.9;
+        goods2.price*=0.9;
+        goods3.price*=0.9;
+        console.log(goods1,goods2,goods3);
+
+        let arr=[goods1,goods2,goods3];
+        arr.sort(function(goods1,goods2){
+            return goods2.sales-goods1.sales;
+        });
+        console.log(arr);
+    </script>
+</body>
+
+</html>

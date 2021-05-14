@@ -1,0 +1,49 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-05-13 18:52:18
+ * @LastEditTime: 2021-05-13 20:49:08
+ * @LastEditors: Please set LastEditors
+ * @Description: 
+                给定两个句子 A 和 B 。 （句子是一串由空格分隔的单词。每个单词仅由小写字母组成。）
+                如果一个单词在其中一个句子中只出现一次，在另一个句子中却没有出现，那么这个单词就是不常见的。
+                返回所有不常用单词的列表。
+                您可以按任何顺序返回列表。
+                来源：力扣（LeetCode）
+                链接：https://leetcode-cn.com/problems/uncommon-words-from-two-sentences
+                著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ * @FilePath: \Web_learning\Stage_2\01_html\0513\力扣题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function demo01(s1, s2) {
+            //合并两个数组
+            let arr1 = s1.split(' ');
+            let arr2 = s2.split(' ');
+            let arr3 = arr1.concat(arr2);
+            let new_arr = [];
+            //若新数组中一个数的indexOf和lastIndexOf相同，则认为该数仅有一个，即为所求数
+            //将所求数存入新数组中输出即可
+            for (let i = 0; i < arr3.length; i++) {
+                if (arr3.indexOf(arr3[i]) == arr3.lastIndexOf(arr3[i])) {
+                    new_arr.push(arr3[i]);
+                }
+            }
+            return new_arr;
+        };
+        let a=demo01('this apple is sweet','this apple is sour');
+        console.log(a);
+    </script>
+</body>
+
+</html>

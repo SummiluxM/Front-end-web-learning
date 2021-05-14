@@ -1,0 +1,120 @@
+<!--
+ * @Author: LeiHao
+ * @Date: 2021-05-13 17:03:29
+ * @LastEditTime: 2021-05-13 20:37:02
+ * @LastEditors: Please set LastEditors
+ * @Description: canvas粒子动画
+ * @FilePath: \Web_learning\Stage_2\01_html\0513\canvas\demo02.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="dotCanvas"></canvas>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        //获取画布
+        var canvas = document.querySelector('#dotCanvas');
+        //获取画笔
+        var ctx = canvas.getContext('2d');
+        //粒子大小
+        var dotCount = 200;
+        //存放点的数组
+        var dots = [];
+        //使画布平铺窗口
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        //生成随机点
+        for (let i = 0; i < dotCount; i++) {
+            ctx.beginPath();
+            //设置初始位置
+            let random_x = Math.floor(Math.random() * canvas.width);
+            let random_y = Math.floor(Math.random() * canvas.height);
+            //设置随机大小
+            var dotRadius = Math.floor(Math.random() * 9 + 3);
+            //设置随机颜色
+            var
+                r = Math.floor(Math.random() * 255),
+                g = Math.floor(Math.random() * 255),
+                b = Math.floor(Math.random() * 255),
+                a = Math.abs(Math.random() * 2 - .5);
+            var color = `rgba(${r},${g},${b},${a})`;
+            //设置初始速度
+            var random_speedX = Math.random() * 1 - 0.5;
+            var random_speedY = Math.random() * 1 - 0.5;
+            //画圆
+            ctx.arc(random_x, random_y, dotRadius, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+            var dot = {
+                x: random_x,
+                y: random_y,
+                speedX: random_speedX,
+                speedY: random_speedY,
+                dotColor: color,
+                dotSize: dotRadius
+            }
+            dots.push(dot);
+        }
+        setInterval(() => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            //重新绘制
+            for (let i = 0; i < dots.length; i++) {
+                let dot = dots[i];
+                dot.x -= dot.speedX;
+                dot.y -= dot.speedY;
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, dot.dotSize, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fillStyle = dot.dotColor;
+                ctx.fill();
+                if (dot.x <= 0 || dot.x >= canvas.width) {
+                    dot.speedX *= -1;
+                }
+                if (dot.y <= 0 || dot.y >= canvas.height) {
+                    dot.speedY *= -1;
+                }
+            }
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = 0; j < dots.length; j++) {
+                    if (i != j) {
+                        var dot1_x = dots[i].x;
+                        var dot1_y = dots[i].y;
+                        var dot2_x = dots[j].x;
+                        var dot2_y = dots[j].y;
+                        var line_color = dots[i].dotColor;
+                        var distance_between = Math.sqrt(Math.pow(dot1_x - dot2_x, 2) + Math.pow(dot1_y - dot2_y, 2));
+                    }
+                    if (distance_between < 80) {
+                        ctx.strokeStyle = `#CCCCCC`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(dot1_x, dot1_y);
+                        ctx.lineTo(dot2_x, dot2_y);
+                        ctx.closePath();
+                        ctx.stroke();
+                    }
+                }
+            }
+        }, 40);
+    </script>
+</body>
+
+</html>
